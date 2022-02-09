@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/manuGallegojz/Akira-Comics/static/css/main.10cb546c.css",
+    "main.js": "/manuGallegojz/Akira-Comics/static/js/main.49da03d4.js",
+    "static/js/787.79f67f02.chunk.js": "/manuGallegojz/Akira-Comics/static/js/787.79f67f02.chunk.js",
+    "index.html": "/manuGallegojz/Akira-Comics/index.html",
+    "main.10cb546c.css.map": "/manuGallegojz/Akira-Comics/static/css/main.10cb546c.css.map",
+    "main.49da03d4.js.map": "/manuGallegojz/Akira-Comics/static/js/main.49da03d4.js.map",
+    "787.79f67f02.chunk.js.map": "/manuGallegojz/Akira-Comics/static/js/787.79f67f02.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.10cb546c.css",
+    "static/js/main.49da03d4.js"
+  ]
+}
