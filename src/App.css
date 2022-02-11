@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+.cabecera{
+  background-image: url("../public/banner.jpg");
+  background-size: cover;
+  height: 500px;
+  background-position: center;
+}
+
+.textoColor{
+  color: white;
+}
+
+.principalCabecera{
+  font-size: 120px;
+}
