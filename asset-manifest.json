@@ -1,16 +1,33 @@
 {
   "files": {
-    "main.css": "/Akira-Comics/static/css/main.a7aee0b5.css",
-    "main.js": "/Akira-Comics/static/js/main.e367fc83.js",
+    "main.css": "/Akira-Comics/static/css/main.6d33dd5f.css",
+    "main.js": "/Akira-Comics/static/js/main.308ef85b.js",
     "static/js/787.fe6a917d.chunk.js": "/Akira-Comics/static/js/787.fe6a917d.chunk.js",
     "static/media/banner.jpg": "/Akira-Comics/static/media/banner.92ac8aeba0e6f56b4cae.jpg",
+    "static/media/banner6.jpg": "/Akira-Comics/static/media/banner6.d7c15db7495005875df2.jpg",
+    "static/media/banner8.jpg": "/Akira-Comics/static/media/banner8.f0ec0db4562db21eb1ca.jpg",
+    "static/media/banner1.jpg": "/Akira-Comics/static/media/banner1.96aeda076e4f1cfdab05.jpg",
+    "static/media/banner7.jpg": "/Akira-Comics/static/media/banner7.386c9edd8760c221b14e.jpg",
+    "static/media/banner2.jpg": "/Akira-Comics/static/media/banner2.90bafefa46e03a21b7c4.jpg",
+    "static/media/banner4.jpg": "/Akira-Comics/static/media/banner4.83b69fb9099be1d0c664.jpg",
+    "static/media/banner5.jpg": "/Akira-Comics/static/media/banner5.56ddd69b6cdfb4032001.jpg",
+    "static/media/banner3.jpg": "/Akira-Comics/static/media/banner3.e1fc3fdc5ab147faf798.jpg",
+    "static/media/comic3.jpg": "/Akira-Comics/static/media/comic3.8768396657b7b49eb412.jpg",
+    "static/media/comic4.jpg": "/Akira-Comics/static/media/comic4.43cb6f9a05d62a4e9fdc.jpg",
+    "static/media/comic1.jpg": "/Akira-Comics/static/media/comic1.10be58dfe86efd370454.jpg",
+    "static/media/comic6.jpg": "/Akira-Comics/static/media/comic6.98be9e9f65a5779d3f19.jpg",
+    "static/media/comic7.jpg": "/Akira-Comics/static/media/comic7.9d8844e4b0b930702613.jpg",
+    "static/media/comic8.jpg": "/Akira-Comics/static/media/comic8.90b8f97b5711106d718e.jpg",
+    "static/media/comic5.jpg": "/Akira-Comics/static/media/comic5.eba74203ea8090efb2fb.jpg",
+    "static/media/comic2.jpg": "/Akira-Comics/static/media/comic2.786456718b857d90aa38.jpg",
+    "static/media/logoAkira.png": "/Akira-Comics/static/media/logoAkira.a9a13a5d146e1fbb6893.png",
     "index.html": "/Akira-Comics/index.html",
-    "main.a7aee0b5.css.map": "/Akira-Comics/static/css/main.a7aee0b5.css.map",
-    "main.e367fc83.js.map": "/Akira-Comics/static/js/main.e367fc83.js.map",
+    "main.6d33dd5f.css.map": "/Akira-Comics/static/css/main.6d33dd5f.css.map",
+    "main.308ef85b.js.map": "/Akira-Comics/static/js/main.308ef85b.js.map",
     "787.fe6a917d.chunk.js.map": "/Akira-Comics/static/js/787.fe6a917d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a7aee0b5.css",
-    "static/js/main.e367fc83.js"
+    "static/css/main.6d33dd5f.css",
+    "static/js/main.308ef85b.js"
   ]
 }
