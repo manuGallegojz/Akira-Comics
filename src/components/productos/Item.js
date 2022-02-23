@@ -1,7 +1,9 @@
 import React from 'react';
 
 import BotonesCantidad from "./CantidadProductos";
-import BotonesAgregar from "./AgregarProducotos";
+import AgregarProductos from "./AgregarProductos";
+
+import ItemDetailContainer from "./ItemDetailContainer";
 
 export default function Item(props){
 
@@ -11,9 +13,7 @@ export default function Item(props){
 
                 <div className="card p-3">
 
-                    <img className='mb-3 w-100' src={props.imagen} alt='Producto'/>
-
-                    <h4 className='text-truncate'>{props.titulo}</h4>
+                <ItemDetailContainer imagen={props.imagen} titulo={props.titulo} descripcion={props.descripcion} stock={props.stock} precio={props.precio} />
 
                     <div className="mt-auto">
 
@@ -31,13 +31,14 @@ export default function Item(props){
 
                         </div>
 
-                        <BotonesAgregar stock={props.stock}/>
+                        <AgregarProductos stock={props.stock}/>
                 
                     </div>
 
                 </div>
 
             </div>
+            
 
         );
 }

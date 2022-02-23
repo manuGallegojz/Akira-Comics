@@ -70,6 +70,22 @@
   transition: 1s all;
   opacity: 0;
 }
+
+.loading2 {
+  position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: 1s all;
+            opacity: 0;
+}
+
 .loading.show {
   opacity: 1;
 }
@@ -86,3 +102,13 @@ to {
   transform: rotate(360deg);
 }
 }  
+
+.cursor-pointer{
+  cursor: pointer;
+}
+
+/*modal*/
+
+.mi-modal{
+    width: 90vw    /* Occupy the 90% of the screen width */
+}

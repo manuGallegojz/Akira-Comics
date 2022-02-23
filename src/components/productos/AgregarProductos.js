@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function BotonesAgregar(props){
+export default function AgregarProductos(props){
 
     const nodoBotonAgregar = document.getElementsByClassName("botonAnadir");
 
