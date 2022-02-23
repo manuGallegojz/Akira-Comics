@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Akira-Comics/static/css/main.6d33dd5f.css",
-    "main.js": "/Akira-Comics/static/js/main.308ef85b.js",
+    "main.css": "/Akira-Comics/static/css/main.3e0e1af4.css",
+    "main.js": "/Akira-Comics/static/js/main.13c4e064.js",
     "static/js/787.fe6a917d.chunk.js": "/Akira-Comics/static/js/787.fe6a917d.chunk.js",
     "static/media/banner.jpg": "/Akira-Comics/static/media/banner.92ac8aeba0e6f56b4cae.jpg",
     "static/media/banner6.jpg": "/Akira-Comics/static/media/banner6.d7c15db7495005875df2.jpg",
@@ -22,12 +22,12 @@
     "static/media/comic2.jpg": "/Akira-Comics/static/media/comic2.786456718b857d90aa38.jpg",
     "static/media/logoAkira.png": "/Akira-Comics/static/media/logoAkira.a9a13a5d146e1fbb6893.png",
     "index.html": "/Akira-Comics/index.html",
-    "main.6d33dd5f.css.map": "/Akira-Comics/static/css/main.6d33dd5f.css.map",
-    "main.308ef85b.js.map": "/Akira-Comics/static/js/main.308ef85b.js.map",
+    "main.3e0e1af4.css.map": "/Akira-Comics/static/css/main.3e0e1af4.css.map",
+    "main.13c4e064.js.map": "/Akira-Comics/static/js/main.13c4e064.js.map",
     "787.fe6a917d.chunk.js.map": "/Akira-Comics/static/js/787.fe6a917d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6d33dd5f.css",
-    "static/js/main.308ef85b.js"
+    "static/css/main.3e0e1af4.css",
+    "static/js/main.13c4e064.js"
   ]
 }
