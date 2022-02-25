@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Akira-Comics/static/css/main.dba52e17.css",
-    "main.js": "/Akira-Comics/static/js/main.6e41c57c.js",
+    "main.js": "/Akira-Comics/static/js/main.725741e8.js",
     "static/js/787.fe6a917d.chunk.js": "/Akira-Comics/static/js/787.fe6a917d.chunk.js",
     "static/media/attackontitan.png": "/Akira-Comics/static/media/attackontitan.1e1dc8338509d35bdc3f.png",
     "static/media/Spiderman.png": "/Akira-Comics/static/media/Spiderman.49437e7d04ebaf6bbab2.png",
@@ -45,11 +45,11 @@
     "static/media/logoAkira.png": "/Akira-Comics/static/media/logoAkira.a9a13a5d146e1fbb6893.png",
     "index.html": "/Akira-Comics/index.html",
     "main.dba52e17.css.map": "/Akira-Comics/static/css/main.dba52e17.css.map",
-    "main.6e41c57c.js.map": "/Akira-Comics/static/js/main.6e41c57c.js.map",
+    "main.725741e8.js.map": "/Akira-Comics/static/js/main.725741e8.js.map",
     "787.fe6a917d.chunk.js.map": "/Akira-Comics/static/js/787.fe6a917d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.dba52e17.css",
-    "static/js/main.6e41c57c.js"
+    "static/js/main.725741e8.js"
   ]
 }
