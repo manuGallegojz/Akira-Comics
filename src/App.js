@@ -222,23 +222,23 @@ function App () {
     <BrowserRouter>
     <NavBar/>
       <Routes>
-        <Route path="/" element={<Home productos={listaProductos}/>}/>
-        <Route path="/mangas" element={<Tienda tipo="Manga" productos={listaProductos}/>}/>
-        <Route path="/figuras" element={<Tienda tipo="Figuras" productos={listaProductos}/>}/>
-        <Route path="/comics" element={<Tienda tipo="Comic" productos={listaProductos}/>}/>
-        <Route path="/mangas/onepiece" element={<Tienda filtro="One Piece" productos={listaProductos}/>}/>
-        <Route path="/mangas/naruto" element={<Tienda filtro="Naruto" productos={listaProductos}/>}/>
-        <Route path="/mangas/attackontitan" element={<Tienda filtro="Attack on Titan" productos={listaProductos}/>}/>
-        <Route path="/mangas/deathnote" element={<Tienda filtro="Death Note" productos={listaProductos}/>}/>
-        <Route path="/mangas/another" element={<Tienda filtro="Another" productos={listaProductos}/>}/>
+        <Route path="Akira-Comics/" element={<Home productos={listaProductos}/>}/>
+        <Route path="Akira-Comics/mangas" element={<Tienda tipo="Manga" productos={listaProductos}/>}/>
+        <Route path="Akira-Comics/figuras" element={<Tienda tipo="Figuras" productos={listaProductos}/>}/>
+        <Route path="Akira-Comics/comics" element={<Tienda tipo="Comic" productos={listaProductos}/>}/>
+        <Route path="Akira-Comics/mangas/onepiece" element={<Tienda filtro="One Piece" productos={listaProductos}/>}/>
+        <Route path="Akira-Comics/mangas/naruto" element={<Tienda filtro="Naruto" productos={listaProductos}/>}/>
+        <Route path="Akira-Comics/mangas/attackontitan" element={<Tienda filtro="Attack on Titan" productos={listaProductos}/>}/>
+        <Route path="Akira-Comics/mangas/deathnote" element={<Tienda filtro="Death Note" productos={listaProductos}/>}/>
+        <Route path="Akira-Comics/mangas/another" element={<Tienda filtro="Another" productos={listaProductos}/>}/>
 
-        <Route path="/comics/batman" element={<Tienda filtro="Batman" productos={listaProductos}/>}/>
-        <Route path="/comics/superman" element={<Tienda filtro="Superman" productos={listaProductos}/>}/>
-        <Route path="/comics/wolverine" element={<Tienda filtro="Wolverine" productos={listaProductos}/>}/>
-        <Route path="/comics/harrypotter" element={<Tienda filtro="Harry Potter" productos={listaProductos}/>}/>
-        <Route path="/comics/spiderman" element={<Tienda filtro="Spiderman" productos={listaProductos}/>}/>
+        <Route path="Akira-Comics/comics/batman" element={<Tienda filtro="Batman" productos={listaProductos}/>}/>
+        <Route path="Akira-Comics/comics/superman" element={<Tienda filtro="Superman" productos={listaProductos}/>}/>
+        <Route path="Akira-Comics/comics/wolverine" element={<Tienda filtro="Wolverine" productos={listaProductos}/>}/>
+        <Route path="Akira-Comics/comics/harrypotter" element={<Tienda filtro="Harry Potter" productos={listaProductos}/>}/>
+        <Route path="Akira-Comics/comics/spiderman" element={<Tienda filtro="Spiderman" productos={listaProductos}/>}/>
 
-        <Route path="/item/:id" element={<ItemDetailContainer productos={listaProductos}/>}/>
+        <Route path="Akira-Comics/item/:id" element={<ItemDetailContainer productos={listaProductos}/>}/>
       </Routes>
     <Footer/>
     </BrowserRouter>

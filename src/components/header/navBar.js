@@ -39,23 +39,23 @@ const NavBar = () => {
                 <Nav className="me-auto">
                 <NavLink to="/" className="nav-link text-dark">Inicio</NavLink> 
                 {/*<NavLink to="/mangas" className="nav-link text-dark" activeClassName="nav-link text-danger">Mangas</NavLink>*/}
-                <NavDropdown to="/mangas" title="Mangas" id="collasible-nav-dropdown">
-                    <NavDropdown.Item href="/mangas/onepiece"><img className='my-2' width="100" src={OnePiece} alt="categoria" /></NavDropdown.Item>
-                    <NavDropdown.Item href="/mangas/naruto"><img className='my-2' width="100" src={Naruto} alt="categoria" /></NavDropdown.Item>
-                    <NavDropdown.Item href="/mangas/attackontitan"><img className='my-2' width="100" src={AttackOnTitan} alt="categoria" /></NavDropdown.Item>
-                    <NavDropdown.Item href="/mangas/deathnote"><img className='my-2' width="100" src={DeathNote} alt="categoria" /></NavDropdown.Item>
-                    <NavDropdown.Item href="/mangas/another"><img className='my-2' width="100" src={Another} alt="categoria" /></NavDropdown.Item>
+                <NavDropdown title="Mangas" id="collasible-nav-dropdown">
+                    <NavDropdown.Item href="Akira-Comics/mangas/onepiece"><img className='my-2' width="100" src={OnePiece} alt="categoria" /></NavDropdown.Item>
+                    <NavDropdown.Item href="Akira-Comics/mangas/naruto"><img className='my-2' width="100" src={Naruto} alt="categoria" /></NavDropdown.Item>
+                    <NavDropdown.Item href="Akira-Comics/mangas/attackontitan"><img className='my-2' width="100" src={AttackOnTitan} alt="categoria" /></NavDropdown.Item>
+                    <NavDropdown.Item href="Akira-Comics/mangas/deathnote"><img className='my-2' width="100" src={DeathNote} alt="categoria" /></NavDropdown.Item>
+                    <NavDropdown.Item href="Akira-Comics/mangas/another"><img className='my-2' width="100" src={Another} alt="categoria" /></NavDropdown.Item>
                     <NavDropdown.Divider />
-                    <NavDropdown.Item href="/mangas">Otros Mangas</NavDropdown.Item>
+                    <NavDropdown.Item href="Akira-Comics/mangas">Otros Mangas</NavDropdown.Item>
                 </NavDropdown>
-                <NavDropdown to="/comics" title="Comics" id="collasible-nav-dropdown">
-                    <NavDropdown.Item href="/comics/batman"><img className='my-2' width="60" src={Batman} alt="categoria" /></NavDropdown.Item>
-                    <NavDropdown.Item href="/comics/superman"><img className='my-2' width="60" src={Superman} alt="categoria" /></NavDropdown.Item>
-                    <NavDropdown.Item href="/comics/wolverine"><img className='my-2' width="100" src={Lobezno} alt="categoria" /></NavDropdown.Item>
-                    <NavDropdown.Item href="/comics/harrypotter"><img className='my-2' width="100" src={HarryPotter} alt="categoria" /></NavDropdown.Item>
-                    <NavDropdown.Item href="/comics/spiderman"><img className='my-2' width="100" src={Spiderman} alt="categoria" /></NavDropdown.Item>
+                <NavDropdown title="Comics" id="collasible-nav-dropdown">
+                    <NavDropdown.Item href="Akira-Comics/comics/batman"><img className='my-2' width="60" src={Batman} alt="categoria" /></NavDropdown.Item>
+                    <NavDropdown.Item href="Akira-Comics/comics/superman"><img className='my-2' width="60" src={Superman} alt="categoria" /></NavDropdown.Item>
+                    <NavDropdown.Item href="Akira-Comics/comics/wolverine"><img className='my-2' width="100" src={Lobezno} alt="categoria" /></NavDropdown.Item>
+                    <NavDropdown.Item href="Akira-Comics/comics/harrypotter"><img className='my-2' width="100" src={HarryPotter} alt="categoria" /></NavDropdown.Item>
+                    <NavDropdown.Item href="Akira-Comics/comics/spiderman"><img className='my-2' width="100" src={Spiderman} alt="categoria" /></NavDropdown.Item>
                     <NavDropdown.Divider />
-                    <NavDropdown.Item href="/comics">Otros Comics</NavDropdown.Item>
+                    <NavDropdown.Item href="Akira-Comics/comics">Otros Comics</NavDropdown.Item>
                 </NavDropdown>  
                 </Nav>
                 <Nav>

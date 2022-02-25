@@ -20,12 +20,12 @@ export default function Footer(){
 
                         <div className='col-md-12 text-center text-light'>
 
-                            <a href='/'><img width="50" height="50" src={logoAkira} alt="logotipo" /></a>
+                            <a href='Akira-Comics/'><img width="50" height="50" src={logoAkira} alt="logotipo" /></a>
 
                             <div className="d-flex mt-3 justify-content-center">
-                                <NavLink className="nav-link text-white" to="/mangas">Mangas</NavLink>
-                                <NavLink className="nav-link text-white" to="/figuras">Figuras</NavLink>
-                                <NavLink className="nav-link text-white" to="/carrito">Carrito</NavLink>
+                                <NavLink className="nav-link text-white" href="Akira-Comics/mangas">Mangas</NavLink>
+                                <NavLink className="nav-link text-white" href="Akira-Comics/">Figuras</NavLink>
+                                <NavLink className="nav-link text-white" href="Akira-Comics/">Carrito</NavLink>
                             </div>
 
                             <div className="d-flex mt-3 justify-content-center">
