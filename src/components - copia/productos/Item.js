@@ -10,7 +10,7 @@ export default function Item(props){
 
                 <div className="card p-3">
 
-                <a className="text-dark text-decoration-none" href={`/Akira-Comics/item/${props.id}`}>
+                <a className="text-dark text-decoration-none" href={`/item/${props.id}`}>
 
                     <div className='cursor-pointer'>
 
