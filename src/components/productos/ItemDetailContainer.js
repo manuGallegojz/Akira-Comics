@@ -1,15 +1,38 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 
 import ItemDetail from "./ItemDetail";
 
 export default function ItemDetailContainer(props){
 
-    return (
-        <>
+    let arregloProductos = props.productos;
 
-        <ItemDetail imagen={props.imagen} titulo={props.titulo} descripcion={props.descripcion} stock={props.stock} precio={props.precio}/>
+    const {id} = useParams();
 
-        </>
-    );
+    return <React.Fragment>
+
+    {
+
+    arregloProductos.map(e=>{
+
+        return (
+            <div className='container'>
+                {
+
+                e.id === id &&
+
+                //<h1>No se mostró nada</h1>
+                <ItemDetail imagen={e.imagen} titulo={e.titulo} descripcion={e.descripcion} stock={e.stock} precio={e.precio}/>
+
+                }
+            </div>
+        )
+        
+
+    })
+    
+    }
+
+    </React.Fragment>
 
 }

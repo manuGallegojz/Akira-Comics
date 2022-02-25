@@ -3,17 +3,24 @@ import React from 'react';
 import BotonesCantidad from "./CantidadProductos";
 import AgregarProductos from "./AgregarProductos";
 
-import ItemDetailContainer from "./ItemDetailContainer";
-
 export default function Item(props){
+
 
     return(
 
-            <div key={props.id} className='d-flex flex-column col-md-3 col-6 p-3 rounded product-block'>
-
                 <div className="card p-3">
 
-                <ItemDetailContainer imagen={props.imagen} titulo={props.titulo} descripcion={props.descripcion} stock={props.stock} precio={props.precio} />
+                <a className="text-dark text-decoration-none" href={`/item/${props.id}`}>
+
+                    <div className='cursor-pointer'>
+
+                        <img className='mb-3 w-100' src={props.imagen} alt='Producto' />
+
+                        <h4 className='text-truncate'>{props.titulo}</h4>
+
+                    </div>
+
+                </a>
 
                     <div className="mt-auto">
 
@@ -36,8 +43,6 @@ export default function Item(props){
                     </div>
 
                 </div>
-
-            </div>
             
 
         );

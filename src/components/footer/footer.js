@@ -1,71 +1,47 @@
 import React from 'react';
 
+import logoAkira from "../../assets/img/logoAkira.png";
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {  faFacebookF, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
+
+import {NavLink} from 'react-router-dom';
+
 export default function Footer(){
 
     return(
 
-            <footer className='page-footer font-small bg-dark pt-4 mt-5'>
+        <>
+            <footer className='page-footer font-small bg-dark py-5 mt-5'>
 
-            <div className="container-fluid text-center text-md-left">
+                <div className='container'>
 
-                <div className="row">
+                    <div className='d-flex justify-content-center'>
 
-                <div className="col-md-6 mt-md-0 mt-3 text-white">
+                        <div className='col-md-12 text-center text-light'>
 
-                    <h5 className="text-uppercase">Footer Content</h5>
-                    <p>Here you can use rows and columns to organize your footer content.</p>
+                            <a href='/'><img width="50" height="50" src={logoAkira} alt="logotipo" /></a>
 
-                </div>
+                            <div className="d-flex mt-3 justify-content-center">
+                                <NavLink className="nav-link text-white" to="/mangas">Mangas</NavLink>
+                                <NavLink className="nav-link text-white" to="/figuras">Figuras</NavLink>
+                                <NavLink className="nav-link text-white" to="/carrito">Carrito</NavLink>
+                            </div>
 
-                <hr className="clearfix w-100 d-md-none pb-3" />
+                            <div className="d-flex mt-3 justify-content-center">
+                                <NavLink className="mx-2 circuloContacto" to="/mangas"><span className='mostrarRedesSociales'><FontAwesomeIcon icon={faFacebookF} inverse /></span></NavLink>
+                                <NavLink className="mx-2 circuloContacto" to="/mangas"><span className='mostrarRedesSociales'><FontAwesomeIcon icon={faTwitter} inverse /></span></NavLink>
+                                <NavLink className="mx-2 circuloContacto" to="/mangas"><span className='mostrarRedesSociales'><FontAwesomeIcon icon={faInstagram} inverse /></span></NavLink>
+                            </div>
+                        
+                        </div>
 
-                <div className="col-md-3 mb-md-0 mb-3 text-white">
-
-                    <h5 className="text-uppercase">Links</h5>
-
-                    <ul className="list-unstyled">
-                    <li>
-                        <a href="#!">Link 1</a>
-                    </li>
-                    <li>
-                        <a href="#!">Link 2</a>
-                    </li>
-                    <li>
-                        <a href="#!">Link 3</a>
-                    </li>
-                    <li>
-                        <a href="#!">Link 4</a>
-                    </li>
-                    </ul>
+                    </div>
 
                 </div>
-
-                <div className="col-md-3 mb-md-0 mb-3 text-white">
-
-                    <h5 className="text-uppercase">Links</h5>
-
-                    <ul className="list-unstyled">
-                        <li>
-                            <a href="#!">Link 1</a>
-                        </li>
-                        <li>
-                            <a href="#!">Link 2</a>
-                        </li>
-                        <li>
-                            <a href="#!">Link 3</a>
-                        </li>
-                        <li>
-                            <a href="#!">Link 4</a>
-                        </li>
-                    </ul>
-
-                </div>
-
-                </div>
-
-            </div>
-
 
             </footer>
+
+            </>
         );
 }

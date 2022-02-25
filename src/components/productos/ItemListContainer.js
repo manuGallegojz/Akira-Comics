@@ -2,12 +2,12 @@ import React from 'react';
 
 import ItemList from "./ItemList";
 
-const ItemListContainer = () => {
+const ItemListContainer = (props) => {
 
     return(
             <div className='container d-flex flex-wrap'>
 
-                <ItemList />
+                <ItemList tipo={props.tipo} filtro={props.filtro} productos={props.productos}/>
 
             </div>
         );
