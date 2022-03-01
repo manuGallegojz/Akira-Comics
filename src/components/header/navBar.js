@@ -33,7 +33,7 @@ const NavBar = () => {
 
             <Navbar collapseOnSelect expand="lg">
             <Container>
-            <NavLink className="navbar-brand" to="/"><img width="100" height="100" src={logoAkira} alt="logotipo" /></NavLink>
+            <NavLink className="navbar-brand" to="/Akira-Comics"><img width="100" height="100" src={logoAkira} alt="logotipo" /></NavLink>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="me-auto">
@@ -59,48 +59,11 @@ const NavBar = () => {
                 </NavDropdown>  
                 </Nav>
                 <Nav>
-                    <CartWidget />
+                    <NavLink to="/carrito" className="nav-link text-dark"><CartWidget /></NavLink>
                 </Nav>
             </Navbar.Collapse>
             </Container>
             </Navbar>
-
-            
-
-        {/*<nav className="navbar navbar-expand-lg px-5">
-
-            <NavLink className="navbar-brand" to="/"><img width="100" height="100" src={logoAkira} alt="logotipo" /></NavLink>
-
-                <Nav>
-                    <NavDropdown
-                    id="nav-dropdown-dark-example"
-                    title="Dropdown"
-                    menuVariant="dark"
-                    >
-                    <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                    <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-                    </NavDropdown>
-                    <ul className="navbar-nav">
-                        <li className="nav-item active">
-                            <NavLink to="/" className="nav-link text-dark" activeClassName="nav-link text-danger">Inicio</NavLink> 
-                        </li>
-                        <li className="nav-item">
-                        <NavLink to="/mangas" className="nav-link text-dark" activeClassName="nav-link text-danger">Mangas</NavLink> 
-                        </li>
-                        <li className="nav-item">
-                        <NavLink to="/mangas" className="nav-link text-dark" activeClassName="nav-link text-danger">Comics</NavLink> 
-                        </li>
-                        <li className="nav-item">
-                        <NavLink to="/figuras" className="nav-link text-dark" activeClassName="nav-link text-danger">Figuras</NavLink>
-                        </li>
-                    </ul>
-                </Nav>
-
-                <CartWidget />
-            </nav>*/}
 
     </header>
 

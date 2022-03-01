@@ -15,7 +15,7 @@ export default function Tienda(props) {
 
       <Filtros />
 
-      <ItemListContainer tipo={props.tipo} filtro={props.filtro} productos={props.productos}/>
+      <ItemListContainer tipo={props.tipo} filtro={props.filtro}/>
 
     </div>)
 

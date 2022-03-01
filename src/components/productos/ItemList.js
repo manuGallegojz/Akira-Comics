@@ -1,12 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+
+import {ThemeContext} from '../../context/ThemeContext'
 
 import Item from './Item';
 
 export default function ItemList(props){
 
+    const listaProductos = useContext(ThemeContext);
+
     const [usuarios ,setUsuarios] = useState([]);
 
-    let listaProductos = props.productos;
+    //let listaProductos = props.productos;
 
     useEffect(()=>{
 

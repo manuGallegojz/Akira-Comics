@@ -8,13 +8,13 @@ import Header from "../header/Header";
 
 import ItemListContainer from "../productos/ItemListContainer";
 
-export default function Home (props) {
+export default function Home () {
   
     return <>
 
         <Header/>
 
-        <ItemListContainer productos={props.productos}/>
+        <ItemListContainer/>
 
       </>
 }

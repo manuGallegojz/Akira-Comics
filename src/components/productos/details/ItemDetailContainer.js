@@ -1,11 +1,12 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { useParams } from 'react-router-dom';
+import {ThemeContext} from '../../../context/ThemeContext'
 
 import ItemDetail from "./ItemDetail";
 
-export default function ItemDetailContainer(props){
+export default function ItemDetailContainer(){
 
-    let arregloProductos = props.productos;
+    const listaProductos = useContext(ThemeContext);
 
     const {id} = useParams();
 
@@ -13,7 +14,7 @@ export default function ItemDetailContainer(props){
 
     {
 
-    arregloProductos.map(e=>{
+    listaProductos.map(e=>{
 
         return (
             <div className='container'>
@@ -21,7 +22,6 @@ export default function ItemDetailContainer(props){
 
                 e.id === id &&
 
-                //<h1>No se mostró nada</h1>
                 <ItemDetail imagen={e.imagen} titulo={e.titulo} descripcion={e.descripcion} stock={e.stock} precio={e.precio}/>
 
                 }

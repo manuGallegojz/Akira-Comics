@@ -1,9 +1,47 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import BotonesCantidad from "./CantidadProductos";
-import AgregarProductos from "./AgregarProductos";
+import ItemCount from "./botones/ItemCount";
+import AgregarProductos from "./botones/AgregarProductos";
 
 export default function Item(props){
+
+    const [contador, setContador] = useState(1);
+
+    const [visible, setVisible] = useState(false);
+/*
+    console.log(props.stock === "0");
+
+    if(props.stock === "0"){
+        setContador(0)
+    }else{
+
+    }*/
+    
+    const onAdd = () => {
+
+        setVisible(true);
+
+    }
+
+    const botonSumar = ()=>{
+
+        if(props.stock > contador){
+
+        setContador(contador+1);
+
+        }
+
+    }
+
+    const botonRestar = ()=>{
+
+        if(contador > 1){
+
+                setContador(contador-1);
+
+        }
+
+    }
 
 
     return(
@@ -34,12 +72,30 @@ export default function Item(props){
 
                             </div>
 
-                            <BotonesCantidad stock={props.stock}/>
+                            {props.stock !== "0" && <ItemCount stock={props.stock} cantidad={contador} botonRestar={botonRestar} botonSumar={botonSumar}/>}
 
                         </div>
 
-                        <AgregarProductos stock={props.stock}/>
-                
+                        {
+
+                            props.stock !== "0" &&
+                            
+                            <div className='d-flex justify-content-between'>
+
+                                <div className='col-4'>
+
+                                <AgregarProductos stock={props.stock} cantidad={contador} agregarFuncion={onAdd}/>
+
+                                </div>
+
+                                <div className='col-7'>
+
+                                {visible ? <a href='/Akira-Comics/carrito'><button className='btn btn-primary mt-3 botonTerminarCompra w-100'>Terminar compra</button></a> : null}
+
+                                </div>
+
+                        </div>}
+
                     </div>
 
                 </div>

@@ -7,7 +7,7 @@ const ItemListContainer = (props) => {
     return(
             <div className='container d-flex flex-wrap'>
 
-                <ItemList tipo={props.tipo} filtro={props.filtro} productos={props.productos}/>
+                <ItemList tipo={props.tipo} filtro={props.filtro}/>
 
             </div>
         );
