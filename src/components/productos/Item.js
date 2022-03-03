@@ -2,20 +2,13 @@ import React, { useState } from 'react';
 
 import ItemCount from "./botones/ItemCount";
 import AgregarProductos from "./botones/AgregarProductos";
+import { NavLink } from 'react-router-dom';
 
 export default function Item(props){
 
     const [contador, setContador] = useState(1);
 
     const [visible, setVisible] = useState(false);
-/*
-    console.log(props.stock === "0");
-
-    if(props.stock === "0"){
-        setContador(0)
-    }else{
-
-    }*/
     
     const onAdd = () => {
 
@@ -48,7 +41,7 @@ export default function Item(props){
 
                 <div className="card p-3">
 
-                <a className="text-dark text-decoration-none" href={`/Akira-Comics/item/${props.id}`}>
+                <NavLink className="text-dark text-decoration-none" to={`/Akira-Comics/item/${props.id}`}>
 
                     <div className='cursor-pointer'>
 
@@ -58,7 +51,7 @@ export default function Item(props){
 
                     </div>
 
-                </a>
+                </NavLink>
 
                     <div className="mt-auto">
 

@@ -1,17 +1,18 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 
 import ItemCount from "../botones/ItemCount";
 import AgregarProductos from "../botones/AgregarProductos";
 
-import {CartContext} from '../../../context/CartContext'
+import {useCartContext} from '../../../context/CartContext'
+import { NavLink } from 'react-router-dom';
 
 export default function ItemDetail(props){
 
-    const carritoAgregar = useContext(CartContext);
-
-    console.log(carritoAgregar);
+    const {contadorCarrito, agregarProductos} = useCartContext();
 
     const [contador, setContador] = useState(1);
+
+    const item = [];
 
     const [visible, setVisible] = useState(false);
 
@@ -19,14 +20,16 @@ export default function ItemDetail(props){
 
         setVisible(true);
 
-        carritoAgregar.item = {
+        item.push({
             imagen: props.imagen,
             precio: props.precio,
             titulo: props.titulo,
-            descripcion: props.descripcion
-        };
+            descripcion: props.descripcion,
+            cantidad: {contadorCarrito},
+            id: props.id
+        });
 
-        carritoAgregar.cantidad = contador;
+        agregarProductos(item, contador);
 
     }
 
@@ -82,7 +85,7 @@ export default function ItemDetail(props){
 
                     <AgregarProductos stock={props.stock} cantidad={contador} agregarFuncion={onAdd}/>
 
-                    {visible ? <a href='/Akira-Comics/carrito'><button className='btn btn-primary mt-3 botonTerminarCompra w-100'>Terminar compra</button></a> : null}
+                    {visible ? <NavLink to='/Akira-Comics/carrito'><button className='btn btn-primary mt-3 botonTerminarCompra w-100'>Terminar compra</button></NavLink> : null}
 
                 </div>
                 

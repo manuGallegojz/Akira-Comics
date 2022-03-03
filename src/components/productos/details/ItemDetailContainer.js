@@ -22,7 +22,7 @@ export default function ItemDetailContainer(){
 
                 e.id === id &&
 
-                <ItemDetail imagen={e.imagen} titulo={e.titulo} descripcion={e.descripcion} stock={e.stock} precio={e.precio}/>
+                <ItemDetail id={e.id} imagen={e.imagen} titulo={e.titulo} descripcion={e.descripcion} stock={e.stock} precio={e.precio}/>
 
                 }
             </div>
