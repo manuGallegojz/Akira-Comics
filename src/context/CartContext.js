@@ -226,12 +226,11 @@ export const ContextoCarritoProductos = ({children}) => {
 
     const quitarProductos = (producto, numero)=>{
 
-        console.log(producto); 
 
+        const filtroProductos = productosCarrito.filter((e) => e[0] !== producto);
 
-        const filtroProductos = productosCarrito[0].filter((e) => e.id !== producto.id);
+        setProductosCarrito(filtroProductos);
 
-        console.log(filtroProductos); 
 
     }
 

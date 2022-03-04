@@ -33,13 +33,14 @@ export default function Carrito(){
                     <div>
                         <h3>{productoMuestra.titulo}</h3>
                         <p className='w-100'>{productoMuestra.descripcion}</p>
+                        <h6>{productoMuestra.precio}</h6>
                     </div>
                     <h5>x{cantidad}</h5>
                 </div>
 
                 <div className='w-50 d-flex flex-column justify-content-center'>
 
-                <FontAwesomeIcon className='cursor-pointer' onClick={quitarProductos(productoMuestra, index)} icon={faTrash} />
+                <FontAwesomeIcon className='cursor-pointer' onClick={()=>{quitarProductos(productoMuestra, index)}} icon={faTrash} />
 
                 </div>
 
