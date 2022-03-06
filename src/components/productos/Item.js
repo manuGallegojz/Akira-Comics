@@ -21,14 +21,21 @@ export default function Item(props){
 
     const [contador, setContador] = useState(1);
 
-    const [agregado, setAgregado] = useState("Agregar");
-
-    const {contadorCarrito, agregarProductos} = useCartContext();
+    const {contadorCarrito, agregarProductos, productosIdCarrito} = useCartContext();
     const {onAdd} = useProductsContext();
 
     const cambioEstado = ()=>{
         setVisible(true);
-        setAgregado("Añadido")
+    }
+
+    let id = parseInt(props.id);
+
+    let nuevaLista = [];
+    
+    if(productosIdCarrito[0]){
+
+        nuevaLista = productosIdCarrito.filter(e => e === id);
+
     }
     
     const botonSumar = ()=>{
@@ -79,7 +86,7 @@ export default function Item(props){
 
                             </div>
 
-                            {productoDetalle.stock !== "0" && <ItemCount producto={productoDetalle} stock={productoDetalle.stock} contador={contador} botonRestar={botonRestar} botonSumar={botonSumar} apretado={visible}/>}
+                            {productoDetalle.stock !== "0" && <ItemCount producto={productoDetalle} stock={productoDetalle.stock} contador={contador} botonRestar={botonRestar} botonSumar={botonSumar} apretado={nuevaLista}/>}
 
                         </div>
 
@@ -91,13 +98,13 @@ export default function Item(props){
 
                                 <div className='col-4'>
 
-                                <AgregarProductos estadoAgregar={agregado} contadorCarrito={contadorCarrito} agregarProductos={agregarProductos} contador={contador} producto={productoDetalle} agregarFuncion={onAdd} cambioEstado={cambioEstado} apretado={visible}/>
+                                <AgregarProductos textoAgregar={"Añadido"} contadorCarrito={contadorCarrito} agregarProductos={agregarProductos} contador={contador} producto={productoDetalle} agregarFuncion={onAdd} cambioEstado={cambioEstado} apretado={nuevaLista} cambioVisible={visible}/>
 
                                 </div>
 
                                 <div className='col-7'>
 
-                                {visible ? <a href='/Akira-Comics/carrito'><button className='btn btn-primary mt-3 botonTerminarCompra w-100'>Terminar compra</button></a> : null}
+                                {nuevaLista[0] && <NavLink to='/Akira-Comics/carrito'><button className='btn btn-primary mt-3 botonTerminarCompra w-100'>Terminar compra</button></NavLink>}
 
                                 </div>
 

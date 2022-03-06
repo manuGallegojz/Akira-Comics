@@ -242,6 +242,8 @@ export const ContextoCarritoProductos = ({children}) => {
 
     const limpiarProductos = ()=>{
         setProductosCarrito([]);
+        setContadorCarrito(0);
+
     }
 
     return(<>

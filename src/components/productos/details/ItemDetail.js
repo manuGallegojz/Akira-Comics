@@ -22,44 +22,24 @@ export default function ItemDetail(props){
 
     const [contador, setContador] = useState(1);
 
-    const [agregado, setAgregado] = useState("Agregar");
-
     const {contadorCarrito, agregarProductos, productosIdCarrito} = useCartContext();
     const {onAdd} = useProductsContext();
 
     const cambioEstado = ()=>{
         setVisible(true);
-        setAgregado("¡Añadido al carrito!")
+        
     }
 
     let id = parseInt(props.id);
 
-    //console.log(productosIdCarrito, productosIdCarrito.length, productosIdCarrito[0] === id)
-
+    let nuevaLista = [];
     
-/*
-    if(productosIdCarrito !== 0){
+    if(productosIdCarrito[0]){
 
-        let i = 0
+        nuevaLista = productosIdCarrito.filter(e => e === id);
 
-        while (i < productosIdCarrito.length) {
+    }
 
-            if(productosIdCarrito[i] === id){
-
-                    
-
-                break;
-
-            }
-
-            i++
-            
-        }
-
-    }*/
-
-    
-    
     const botonSumar = ()=>{
 
         if(productoDetalle.stock > contador){
@@ -105,13 +85,13 @@ export default function ItemDetail(props){
 
                 <>
 
-                    <ItemCount producto={productoDetalle} stock={productoDetalle.stock} contador={contador} botonRestar={botonRestar} botonSumar={botonSumar} apretado={visible}/>
+                    <ItemCount producto={productoDetalle} stock={productoDetalle.stock} contador={contador} botonRestar={botonRestar} botonSumar={botonSumar} apretado={nuevaLista} cambioVisible={visible}/>
 
                 <div className='w-50'>
 
-                    <AgregarProductos estadoAgregar={agregado} contadorCarrito={contadorCarrito} agregarProductos={agregarProductos} contador={contador} producto={productoDetalle} agregarFuncion={onAdd} cambioEstado={cambioEstado} apretado={visible}/>
+                    <AgregarProductos textoAgregar={"¡Producto Añadido al Carrito!"} contadorCarrito={contadorCarrito} agregarProductos={agregarProductos} contador={contador} producto={productoDetalle} agregarFuncion={onAdd} cambioEstado={cambioEstado} apretado={nuevaLista} cambioVisible={visible}/>
 
-                    {visible ? <NavLink to='/Akira-Comics/carrito'><button className='btn btn-primary mt-3 botonTerminarCompra w-100'>Terminar compra</button></NavLink> : null}
+                    {nuevaLista[0] && <NavLink to='/Akira-Comics/carrito'><button className='btn btn-primary mt-3 botonTerminarCompra w-100'>Terminar compra</button></NavLink>}
 
                 </div>
                 
