@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { ThemeContext } from './ThemeContext';
+import { ContextoProductos } from './ProductsContext';
 
 //imagenesProductos
 
@@ -213,24 +214,29 @@ export const ContextoCarritoProductos = ({children}) => {
 
     const [productosCarrito, setProductosCarrito] = useState([]);
 
-    const [contadorCarrito, setContador] = useState(0);
+    const [contadorCarrito, setContadorCarrito] = useState(0);
+
+    let productosIdCarrito = [];
+
+    productosCarrito.map(e => productosIdCarrito.push(e[2]))
+
 
     //Para agregar los productos y también sumar la cantidad total de productos que hay
 
-    const agregarProductos = (producto, cantidad)=>{
-        setProductosCarrito([...productosCarrito, [...producto, cantidad]]);
-        setContador((actual) => actual + cantidad)
+    const agregarProductos = (producto, cantidad, id)=>{
+
+        setProductosCarrito([...productosCarrito, [...producto, cantidad, id]]);
+        setContadorCarrito((actual) => actual + cantidad)
+
     }
 
-    //Falta ->
+    const quitarProductos = (producto, cantidad)=>{
 
-    const quitarProductos = (producto, numero)=>{
-
+        setContadorCarrito((actual) => actual - cantidad)
 
         const filtroProductos = productosCarrito.filter((e) => e[0] !== producto);
 
         setProductosCarrito(filtroProductos);
-
 
     }
 
@@ -241,8 +247,10 @@ export const ContextoCarritoProductos = ({children}) => {
     return(<>
 
         <ThemeContext.Provider value={listaProductos}>
-            <CartContext.Provider value={{contadorCarrito, productosCarrito, agregarProductos, limpiarProductos, quitarProductos}}>
+            <CartContext.Provider value={{contadorCarrito, productosCarrito, productosIdCarrito, agregarProductos, limpiarProductos, quitarProductos}}>
+                <ContextoProductos>
                 {children}
+                </ContextoProductos>
             </CartContext.Provider>
         </ThemeContext.Provider>
 

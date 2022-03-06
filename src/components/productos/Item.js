@@ -4,21 +4,36 @@ import ItemCount from "./botones/ItemCount";
 import AgregarProductos from "./botones/AgregarProductos";
 import { NavLink } from 'react-router-dom';
 
+import {useCartContext} from '../../context/CartContext';
+import { useProductsContext } from '../../context/ProductsContext';
+
 export default function Item(props){
+
+    let productoDetalle = {
+        id:props.id, 
+        imagen:props.imagen
+        ,titulo:props.titulo
+        ,descripcion:props.descripcion
+        ,stock:props.stock
+        ,precio:props.precio};
+        
+    const [visible, setVisible] = useState(false);
 
     const [contador, setContador] = useState(1);
 
-    const [visible, setVisible] = useState(false);
-    
-    const onAdd = () => {
+    const [agregado, setAgregado] = useState("Agregar");
 
+    const {contadorCarrito, agregarProductos} = useCartContext();
+    const {onAdd} = useProductsContext();
+
+    const cambioEstado = ()=>{
         setVisible(true);
-
+        setAgregado("Añadido")
     }
-
+    
     const botonSumar = ()=>{
 
-        if(props.stock > contador){
+        if(productoDetalle.stock > contador){
 
         setContador(contador+1);
 
@@ -36,18 +51,17 @@ export default function Item(props){
 
     }
 
-
     return(
 
                 <div className="card p-3">
 
-                <NavLink className="text-dark text-decoration-none" to={`/Akira-Comics/item/${props.id}`}>
+                <NavLink className="text-dark text-decoration-none" to={`/Akira-Comics/item/${productoDetalle.id}`}>
 
                     <div className='cursor-pointer'>
 
-                        <img className='mb-3 w-100' src={props.imagen} alt='Producto' />
+                        <img className='mb-3 w-100 imagenAlto' src={productoDetalle.imagen} alt='Producto' />
 
-                        <h4 className='text-truncate'>{props.titulo}</h4>
+                        <h4 className='text-truncate'>{productoDetalle.titulo}</h4>
 
                     </div>
 
@@ -59,25 +73,25 @@ export default function Item(props){
 
                             <div>
 
-                                <h4>{props.precio}</h4>
+                                <h4>{productoDetalle.precio}</h4>
 
-                                <span>Stock: {props.stock}</span>
+                                <span>Stock: {productoDetalle.stock}</span>
 
                             </div>
 
-                            {props.stock !== "0" && <ItemCount stock={props.stock} cantidad={contador} botonRestar={botonRestar} botonSumar={botonSumar}/>}
+                            {productoDetalle.stock !== "0" && <ItemCount producto={productoDetalle} stock={productoDetalle.stock} contador={contador} botonRestar={botonRestar} botonSumar={botonSumar} apretado={visible}/>}
 
                         </div>
 
                         {
 
-                            props.stock !== "0" &&
+                            productoDetalle.stock !== "0" &&
                             
                             <div className='d-flex justify-content-between'>
 
                                 <div className='col-4'>
 
-                                <AgregarProductos stock={props.stock} cantidad={contador} agregarFuncion={onAdd}/>
+                                <AgregarProductos estadoAgregar={agregado} contadorCarrito={contadorCarrito} agregarProductos={agregarProductos} contador={contador} producto={productoDetalle} agregarFuncion={onAdd} cambioEstado={cambioEstado} apretado={visible}/>
 
                                 </div>
 

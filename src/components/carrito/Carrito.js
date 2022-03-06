@@ -9,6 +9,8 @@ export default function Carrito(){
 
     const {productosCarrito, limpiarProductos, quitarProductos} = useCartContext();
 
+    let totalProductos = 0;
+
     return(
         <div className='container'>
             <h1>Carrito</h1>
@@ -22,12 +24,16 @@ export default function Carrito(){
 
             const cantidad = e[1];
 
+            const precio = productoMuestra.precio;
+
+            totalProductos += parseFloat(precio.slice(1));
+
                 return(
             <>
 
             <div className='d-flex my-5 card flex-row py-4'>
 
-                <img className='w-25' src={productoMuestra.imagen} alt="Portada" />
+                <img className='w-25 imagenAlto' src={productoMuestra.imagen} alt="Portada" />
 
                 <div className='d-flex flex-column justify-content-between py-3'>
                     <div>
@@ -40,7 +46,7 @@ export default function Carrito(){
 
                 <div className='w-50 d-flex flex-column justify-content-center'>
 
-                <FontAwesomeIcon className='cursor-pointer' onClick={()=>{quitarProductos(productoMuestra, index)}} icon={faTrash} />
+                <FontAwesomeIcon className='cursor-pointer' onClick={()=>{quitarProductos(productoMuestra, cantidad)}} icon={faTrash} />
 
                 </div>
 
@@ -62,9 +68,17 @@ export default function Carrito(){
             </div>
             }
 
-            <NavLink to='/Akira-Comics'><button className='btn btn-primary mb-5'>Volver a la tienda</button></NavLink>
+            {productosCarrito.length !== 0 && <h2>Total: ${totalProductos}.00</h2>}
 
-            {productosCarrito.length !== 0 && <button className='btn btn-primary mb-5 ms-4' onClick={limpiarProductos}>Vaciar Carrito</button>}
+            <div className='d-flex mt-4'>
+
+                <NavLink to='/Akira-Comics'><button className='btn btn-primary mb-5'>Volver a la tienda</button></NavLink>
+
+                {productosCarrito.length !== 0 && <button className='btn btn-primary mb-5 ms-4' onClick={limpiarProductos}>Vaciar Carrito</button>}
+
+            </div>
+
+
         </div>
     )
 

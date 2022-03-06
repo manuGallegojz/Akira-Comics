@@ -17,12 +17,12 @@ export default function ItemDetailContainer(){
     listaProductos.map(e=>{
 
         return (
-            <div className='container'>
+            <div key={e.id} className='container'>
                 {
 
                 e.id === id &&
 
-                <ItemDetail id={e.id} imagen={e.imagen} titulo={e.titulo} descripcion={e.descripcion} stock={e.stock} precio={e.precio}/>
+                    <ItemDetail id={e.id} imagen={e.imagen} titulo={e.titulo} descripcion={e.descripcion} stock={e.stock} precio={e.precio}/>
 
                 }
             </div>

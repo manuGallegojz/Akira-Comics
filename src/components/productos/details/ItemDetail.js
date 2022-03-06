@@ -1,41 +1,68 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import ItemCount from "../botones/ItemCount";
 import AgregarProductos from "../botones/AgregarProductos";
 
-import {useCartContext} from '../../../context/CartContext'
+import {useCartContext} from '../../../context/CartContext';
+import { useProductsContext } from '../../../context/ProductsContext';
+
 import { NavLink } from 'react-router-dom';
 
 export default function ItemDetail(props){
 
-    const {contadorCarrito, agregarProductos} = useCartContext();
+    let productoDetalle = {
+        id:props.id, 
+        imagen:props.imagen
+        ,titulo:props.titulo
+        ,descripcion:props.descripcion
+        ,stock:props.stock
+        ,precio:props.precio};
+    
+    const [visible, setVisible] = useState(false);
 
     const [contador, setContador] = useState(1);
 
-    const item = [];
+    const [agregado, setAgregado] = useState("Agregar");
 
-    const [visible, setVisible] = useState(false);
+    const {contadorCarrito, agregarProductos, productosIdCarrito} = useCartContext();
+    const {onAdd} = useProductsContext();
 
-    const onAdd = () => {
-
+    const cambioEstado = ()=>{
         setVisible(true);
-
-        item.push({
-            imagen: props.imagen,
-            precio: props.precio,
-            titulo: props.titulo,
-            descripcion: props.descripcion,
-            cantidad: {contadorCarrito},
-            id: props.id
-        });
-
-        agregarProductos(item, contador);
-
+        setAgregado("¡Añadido al carrito!")
     }
 
+    let id = parseInt(props.id);
+
+    //console.log(productosIdCarrito, productosIdCarrito.length, productosIdCarrito[0] === id)
+
+    
+/*
+    if(productosIdCarrito !== 0){
+
+        let i = 0
+
+        while (i < productosIdCarrito.length) {
+
+            if(productosIdCarrito[i] === id){
+
+                    
+
+                break;
+
+            }
+
+            i++
+            
+        }
+
+    }*/
+
+    
+    
     const botonSumar = ()=>{
 
-        if(props.stock > contador){
+        if(productoDetalle.stock > contador){
 
         setContador(contador+1);
 
@@ -53,23 +80,22 @@ export default function ItemDetail(props){
 
     }
 
-
     return (
         <div className='d-flex'>
 
-            <img className="col-5" src={props.imagen} alt="Portada"/>
+            <img className="col-5 imagenAlto" src={productoDetalle.imagen} alt="Portada"/>
 
             <div>
 
-                <h1>{props.titulo}</h1>
+                <h1>{productoDetalle.titulo}</h1>
 
-                <p>{props.descripcion}</p>
+                <p>{productoDetalle.descripcion}</p>
 
                 <div className='mb-3'>
 
-                    <h4>{props.precio}</h4>
+                    <h4>{productoDetalle.precio}</h4>
 
-                    <span>Stock: {props.stock}</span>
+                    <span>Stock: {productoDetalle.stock}</span>
 
                 </div>
 
@@ -79,11 +105,11 @@ export default function ItemDetail(props){
 
                 <>
 
-                    <ItemCount stock={props.stock} cantidad={contador} botonRestar={botonRestar} botonSumar={botonSumar}/>
+                    <ItemCount producto={productoDetalle} stock={productoDetalle.stock} contador={contador} botonRestar={botonRestar} botonSumar={botonSumar} apretado={visible}/>
 
                 <div className='w-50'>
 
-                    <AgregarProductos stock={props.stock} cantidad={contador} agregarFuncion={onAdd}/>
+                    <AgregarProductos estadoAgregar={agregado} contadorCarrito={contadorCarrito} agregarProductos={agregarProductos} contador={contador} producto={productoDetalle} agregarFuncion={onAdd} cambioEstado={cambioEstado} apretado={visible}/>
 
                     {visible ? <NavLink to='/Akira-Comics/carrito'><button className='btn btn-primary mt-3 botonTerminarCompra w-100'>Terminar compra</button></NavLink> : null}
 

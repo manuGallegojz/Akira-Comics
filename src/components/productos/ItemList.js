@@ -47,7 +47,7 @@ export default function ItemList(props){
 
                     props.tipo === undefined ?
 
-                    <div key={index} className='d-flex flex-column col-md-3 col-6 p-3 rounded product-block'>
+                    <div key={e.id} className='d-flex flex-column col-md-3 col-6 p-3 rounded product-block'>
 
                         <Item id={index} imagen={e.imagen} titulo ={e.titulo} precio={e.precio} stock={e.stock} descripcion={e.descripcion}/>
 
@@ -55,7 +55,7 @@ export default function ItemList(props){
                     
                     props.tipo === e.tipo &&
 
-                    <div key={index} className='d-flex flex-column col-md-3 col-6 p-3 rounded product-block'>
+                    <div key={e.id} className='d-flex flex-column col-md-3 col-6 p-3 rounded product-block'>
 
                         <Item id={index} imagen={e.imagen} titulo ={e.titulo} precio={e.precio} stock={e.stock} descripcion={e.descripcion}/>
 
@@ -65,7 +65,7 @@ export default function ItemList(props){
 
                     e.serie === props.filtro &&
                         
-                        <div key={index} className='d-flex flex-column col-md-3 col-6 p-3 rounded product-block'>
+                        <div key={e.id} className='d-flex flex-column col-md-3 col-6 p-3 rounded product-block'>
 
                             <Item id={index} imagen={e.imagen} titulo ={e.titulo} precio={e.precio} stock={e.stock} descripcion={e.descripcion}/>
 
