@@ -133,6 +133,14 @@ to {
 
 //Carrito
 
+.posicionDesplegable{
+    width: 400px;
+    height: auto;
+    right: 100px;
+    position: absolute;
+    z-index: 100;
+}
+
 .carritoVacio{
     height: 80px;
     background-color: rgb(241, 241, 241);

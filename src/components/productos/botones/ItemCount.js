@@ -2,8 +2,6 @@ import React from 'react';
 
 export default function ItemCount(props){
 
-    console.log(props.apretado);
-
     return <>
 
         <div className='d-flex'>

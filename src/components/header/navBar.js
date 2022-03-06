@@ -58,9 +58,7 @@ const NavBar = () => {
                     <NavDropdown.Item><NavLink to="/Akira-Comics/comics" className="nav-link text-dark">Otros Comics</NavLink></NavDropdown.Item>
                 </NavDropdown>  
                 </Nav>
-                <Nav>
-                <NavLink to="/Akira-Comics/carrito" className="nav-link text-dark"><CartWidget /></NavLink>
-                </Nav>
+                <CartWidget />
             </Navbar.Collapse>
             </Container>
             </Navbar>
