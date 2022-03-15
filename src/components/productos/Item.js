@@ -62,7 +62,7 @@ export default function Item(props){
 
                 <div className="card p-3">
 
-                <NavLink className="text-dark text-decoration-none" to={`/Akira-Comics/item/${productoDetalle.id}`}>
+                <NavLink className="text-dark text-decoration-none" to={`/item/${productoDetalle.id}`}>
 
                     <div className='cursor-pointer'>
 
@@ -104,7 +104,7 @@ export default function Item(props){
 
                                 <div className='col-7'>
 
-                                {nuevaLista[0] && <NavLink to='/Akira-Comics/carrito'><button className='btn btn-primary mt-3 botonTerminarCompra w-100'>Terminar compra</button></NavLink>}
+                                {nuevaLista[0] && <NavLink to='/carrito'><button className='btn btn-primary mt-3 botonTerminarCompra w-100 text-light'>Terminar compra</button></NavLink>}
 
                                 </div>
 

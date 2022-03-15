@@ -74,7 +74,7 @@ export default function CartDesplegable(){
 
             {productosCarrito.length !== 0 && <h4 className='mb-3'>Total: ${totalProductos}.00</h4>}
 
-            <NavLink to='/Akira-Comics'><button className='btn btn-primary'>Volver a la tienda</button></NavLink>
+            <NavLink to='/'><button className='btn btn-primary'>Volver a la tienda</button></NavLink>
 
             {productosCarrito.length !== 0 && <button className='btn btn-primary ms-4' onClick={limpiarProductos}>Vaciar Carrito</button>}
 

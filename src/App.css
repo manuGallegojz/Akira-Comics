@@ -105,9 +105,19 @@
   top: 5px;
   right: 0px; }
 
+.posicionDesplegable {
+  width: 400px;
+  height: auto;
+  right: 100px;
+  position: absolute;
+  z-index: 100; }
+
 .carritoVacio {
   height: 80px;
   background-color: #f1f1f1; }
 
 .colorBotonApretado {
   background-color: gray; }
+
+.imagenAlto {
+  height: fit-content; }

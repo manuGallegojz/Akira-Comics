@@ -38,7 +38,7 @@ export default function ItemList(props){
         </>
         :
 
-        usuarios.map((e, index)=>{
+        usuarios.map(e=>{
             
             return(
                 <>
@@ -49,7 +49,7 @@ export default function ItemList(props){
 
                     <div key={e.id} className='d-flex flex-column col-md-3 col-6 p-3 rounded product-block'>
 
-                        <Item id={index} imagen={e.imagen} titulo ={e.titulo} precio={e.precio} stock={e.stock} descripcion={e.descripcion}/>
+                        <Item id={e.id} imagen={e.imagen} titulo ={e.titulo} precio={e.precio} stock={e.stock} descripcion={e.descripcion}/>
 
                     </div> : 
                     
@@ -57,7 +57,7 @@ export default function ItemList(props){
 
                     <div key={e.id} className='d-flex flex-column col-md-3 col-6 p-3 rounded product-block'>
 
-                        <Item id={index} imagen={e.imagen} titulo ={e.titulo} precio={e.precio} stock={e.stock} descripcion={e.descripcion}/>
+                        <Item id={e.id} imagen={e.imagen} titulo ={e.titulo} precio={e.precio} stock={e.stock} descripcion={e.descripcion}/>
 
                     </div>
                     
@@ -67,7 +67,7 @@ export default function ItemList(props){
                         
                         <div key={e.id} className='d-flex flex-column col-md-3 col-6 p-3 rounded product-block'>
 
-                            <Item id={index} imagen={e.imagen} titulo ={e.titulo} precio={e.precio} stock={e.stock} descripcion={e.descripcion}/>
+                            <Item id={e.id} imagen={e.imagen} titulo ={e.titulo} precio={e.precio} stock={e.stock} descripcion={e.descripcion}/>
 
                         </div>}
 

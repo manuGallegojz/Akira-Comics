@@ -1,0 +1,17 @@
+/*variables*/
+
+/*fuentes*/
+
+$color-principal:#ED2E38;
+
+@font-face {
+    font-family: "nulshock";
+    src: local("nulshock"),
+    url("./fonts/nulshock\ bd.ttf") format("truetype");
+    }
+
+$fuente-titulos: 'nulshock', serif;
+
+.titulos{
+    font-family: 'nulshock';
+}

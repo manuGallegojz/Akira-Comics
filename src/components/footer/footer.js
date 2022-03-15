@@ -23,9 +23,9 @@ export default function Footer(){
                             <a href='/'><img width="50" height="50" src={logoAkira} alt="logotipo" /></a>
 
                             <div className="d-flex mt-3 justify-content-center">
-                                <NavLink className="nav-link text-white" to="/Akira-Comics/mangas">Mangas</NavLink>
-                                <NavLink className="nav-link text-white" to="/Akira-Comics">Figuras</NavLink>
-                                <NavLink className="nav-link text-white" to="/Akira-Comics">Carrito</NavLink>
+                                <NavLink className="nav-link text-white" to="/mangas">Mangas</NavLink>
+                                <NavLink className="nav-link text-white" to="/">Figuras</NavLink>
+                                <NavLink className="nav-link text-white" to="/">Carrito</NavLink>
                             </div>
 
                             <div className="d-flex mt-3 justify-content-center">

@@ -1,4 +1,5 @@
 import React from 'react';
+import Filtros from "../filtros/Filtros";
 
 //Header
 
@@ -13,6 +14,8 @@ export default function Home () {
     return <>
 
         <Header/>
+
+        <Filtros />
 
         <ItemListContainer/>
 

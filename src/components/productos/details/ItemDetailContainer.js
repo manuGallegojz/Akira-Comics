@@ -14,7 +14,7 @@ export default function ItemDetailContainer(){
 
     {
 
-    listaProductos.map(e=>{
+    listaProductos.map((e)=>{
 
         return (
             <div key={e.id} className='container'>

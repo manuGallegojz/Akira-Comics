@@ -11,6 +11,8 @@ import Home from './components/Home/Home';
 import Tienda from './components/Pages/Tienda';
 import ItemDetailContainer from './components/productos/details/ItemDetailContainer';
 import Carrito from './components/carrito/Carrito';
+import CheckOut from './components/carrito/CheckOut';
+import CheckOutInfo from './components/carrito/CheckOutInfo';
 
 //Footer
 
@@ -29,24 +31,26 @@ function App () {
       <BrowserRouter>
       <NavBar/>
         <Routes>
-            <Route path="/Akira-Comics" element={<Home/>}/>
-            <Route path="/Akira-Comics/mangas" element={<Tienda tipo="Manga"/>}/>
-            <Route path="/Akira-Comics/figuras" element={<Tienda tipo="Figuras"/>}/>
-            <Route path="/Akira-Comics/comics" element={<Tienda tipo="Comic"/>}/>
-            <Route path="/Akira-Comics/mangas/onepiece" element={<Tienda filtro="One Piece"/>}/>
-            <Route path="/Akira-Comics/mangas/naruto" element={<Tienda filtro="Naruto"/>}/>
-            <Route path="/Akira-Comics/mangas/attackontitan" element={<Tienda filtro="Attack on Titan"/>}/>
-            <Route path="/Akira-Comics/mangas/deathnote" element={<Tienda filtro="Death Note"/>}/>
-            <Route path="/Akira-Comics/mangas/another" element={<Tienda filtro="Another"/>}/>
+            <Route path="/" element={<Home/>}/>
+            <Route path="/mangas" element={<Tienda tipo="Manga"/>}/>
+            <Route path="/figuras" element={<Tienda tipo="Figuras"/>}/>
+            <Route path="/comics" element={<Tienda tipo="Comic"/>}/>
+            <Route path="/mangas/onepiece" element={<Tienda filtro="One Piece"/>}/>
+            <Route path="/mangas/naruto" element={<Tienda filtro="Naruto"/>}/>
+            <Route path="/mangas/attackontitan" element={<Tienda filtro="Attack on Titan"/>}/>
+            <Route path="/mangas/deathnote" element={<Tienda filtro="Death Note"/>}/>
+            <Route path="/mangas/another" element={<Tienda filtro="Another"/>}/>
 
-            <Route path="/Akira-Comics/comics/batman" element={<Tienda filtro="Batman"/>}/>
-            <Route path="/Akira-Comics/comics/superman" element={<Tienda filtro="Superman"/>}/>
-            <Route path="/Akira-Comics/comics/wolverine" element={<Tienda filtro="Wolverine"/>}/>
-            <Route path="/Akira-Comics/comics/harrypotter" element={<Tienda filtro="Harry Potter"/>}/>
-            <Route path="/Akira-Comics/comics/spiderman" element={<Tienda filtro="Spiderman"/>}/>
+            <Route path="/comics/batman" element={<Tienda filtro="Batman"/>}/>
+            <Route path="/comics/superman" element={<Tienda filtro="Superman"/>}/>
+            <Route path="/comics/wolverine" element={<Tienda filtro="Wolverine"/>}/>
+            <Route path="/comics/harrypotter" element={<Tienda filtro="Harry Potter"/>}/>
+            <Route path="/comics/spiderman" element={<Tienda filtro="Spiderman"/>}/>
 
-            <Route path="/Akira-Comics/item/:id" element={<ItemDetailContainer/>}/>
-            <Route path="/Akira-Comics/carrito" element={<Carrito />}/>
+            <Route path="/item/:id" element={<ItemDetailContainer/>}/>
+            <Route path="/carrito" element={<Carrito />}/>
+            <Route path="/checkout" element={<CheckOut />}/>
+            <Route path="/checkout/info" element={<CheckOutInfo />}/>
 
         </Routes>
       <Footer/>

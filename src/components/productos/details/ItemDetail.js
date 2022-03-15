@@ -11,8 +11,8 @@ import { NavLink } from 'react-router-dom';
 export default function ItemDetail(props){
 
     let productoDetalle = {
-        id:props.id, 
-        imagen:props.imagen
+        id:props.id
+        ,imagen:props.imagen
         ,titulo:props.titulo
         ,descripcion:props.descripcion
         ,stock:props.stock
@@ -27,12 +27,13 @@ export default function ItemDetail(props){
 
     const cambioEstado = ()=>{
         setVisible(true);
-        
     }
 
     let id = parseInt(props.id);
 
     let nuevaLista = [];
+
+    console.log(nuevaLista[0] === id)
     
     if(productosIdCarrito[0]){
 
@@ -91,7 +92,7 @@ export default function ItemDetail(props){
 
                     <AgregarProductos textoAgregar={"¡Producto Añadido al Carrito!"} contadorCarrito={contadorCarrito} agregarProductos={agregarProductos} contador={contador} producto={productoDetalle} agregarFuncion={onAdd} cambioEstado={cambioEstado} apretado={nuevaLista} cambioVisible={visible}/>
 
-                    {nuevaLista[0] && <NavLink to='/Akira-Comics/carrito'><button className='btn btn-primary mt-3 botonTerminarCompra w-100'>Terminar compra</button></NavLink>}
+                    {nuevaLista[0] && <NavLink to='/carrito'><button className='btn btn-primary mt-3 botonTerminarCompra w-100 text-light'>Terminar compra</button></NavLink>}
 
                 </div>
                 

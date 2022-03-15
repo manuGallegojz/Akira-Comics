@@ -7,10 +7,7 @@ import { NavLink } from 'react-router-dom';
 
 export default function Carrito(){
 
-    const {productosCarrito, limpiarProductos, quitarProductos} = useCartContext();
-
-    let totalProductos = 0;
-
+    const {productosCarrito, limpiarProductos, quitarProductos, totalCarrito} = useCartContext();
 
     return(
         <div className='container'>
@@ -18,17 +15,13 @@ export default function Carrito(){
 
             {
 
-            productosCarrito.length !== 0 ? 
+            productosCarrito.length !== 0 ?  
 
             productosCarrito.map(e => {
 
             const productoMuestra = e[0];
 
             const cantidad = e[1];
-
-            const precio = productoMuestra.precio;
-
-            totalProductos += parseFloat(precio.slice(1));
 
                 return(
             <>
@@ -70,13 +63,13 @@ export default function Carrito(){
             </div>
             }
 
-            {productosCarrito.length !== 0 && <h2>Total: ${totalProductos}.00</h2>}
+            {productosCarrito.length !== 0 && <h2>Total: ${totalCarrito}.00</h2>}
 
             <div className='d-flex mt-4'>
 
-                <NavLink to='/Akira-Comics'><button className='btn btn-primary mb-5'>Volver a la tienda</button></NavLink>
+                {productosCarrito.length !== 0 && <NavLink to='/checkout'><button className='btn btn-primary mb-5 text-light'>Terminar Compra</button></NavLink>}
 
-                {productosCarrito.length !== 0 && <button className='btn btn-primary mb-5 ms-4' onClick={limpiarProductos}>Vaciar Carrito</button>}
+                {productosCarrito.length !== 0 && <button className='btn btn-primary mb-5 ms-4 text-light' onClick={limpiarProductos}>Vaciar Carrito</button>}
 
             </div>
 

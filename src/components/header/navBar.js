@@ -33,29 +33,29 @@ const NavBar = () => {
 
             <Navbar collapseOnSelect expand="lg">
             <Container>
-            <NavLink className="navbar-brand" to="/Akira-Comics"><img width="100" height="100" src={logoAkira} alt="logotipo" /></NavLink>
+            <NavLink className="navbar-brand" to="/"><img width="100" height="100" src={logoAkira} alt="logotipo" /></NavLink>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="me-auto">
-                <NavLink to="/Akira-Comics" className="nav-link text-dark">Inicio</NavLink> 
+                <NavLink to="/" className="nav-link text-dark titulos">Inicio</NavLink> 
                 {/*<NavLink to="/mangas" className="nav-link text-dark" activeClassName="nav-link text-danger">Mangas</NavLink>*/}
-                <NavDropdown to="/Akira-Comics/mangas" title="Mangas" id="collasible-nav-dropdown">
-                    <NavDropdown.Item><NavLink to="/Akira-Comics/mangas/onepiece"><img className='my-2' width="100" src={OnePiece} alt="categoria" /></NavLink></NavDropdown.Item>
-                    <NavDropdown.Item><NavLink to="/Akira-Comics/mangas/naruto"><img className='my-2' width="100" src={Naruto} alt="categoria" /></NavLink></NavDropdown.Item>
-                    <NavDropdown.Item><NavLink to="/Akira-Comics/mangas/attackontitan"><img className='my-2' width="100" src={AttackOnTitan} alt="categoria" /></NavLink></NavDropdown.Item>
-                    <NavDropdown.Item><NavLink to="/Akira-Comics/mangas/deathnote"><img className='my-2' width="100" src={DeathNote} alt="categoria" /></NavLink></NavDropdown.Item>
-                    <NavDropdown.Item><NavLink to="/Akira-Comics/mangas/another"><img className='my-2' width="100" src={Another} alt="categoria" /></NavLink></NavDropdown.Item>
+                <NavDropdown className='titulos' to="/mangas" title="Mangas" id="collasible-nav-dropdown">
+                    <NavDropdown.Item><NavLink to="/mangas/onepiece"><img className='my-2' width="100" src={OnePiece} alt="categoria" /></NavLink></NavDropdown.Item>
+                    <NavDropdown.Item><NavLink to="/mangas/naruto"><img className='my-2' width="100" src={Naruto} alt="categoria" /></NavLink></NavDropdown.Item>
+                    <NavDropdown.Item><NavLink to="/mangas/attackontitan"><img className='my-2' width="100" src={AttackOnTitan} alt="categoria" /></NavLink></NavDropdown.Item>
+                    <NavDropdown.Item><NavLink to="/mangas/deathnote"><img className='my-2' width="100" src={DeathNote} alt="categoria" /></NavLink></NavDropdown.Item>
+                    <NavDropdown.Item><NavLink to="/mangas/another"><img className='my-2' width="100" src={Another} alt="categoria" /></NavLink></NavDropdown.Item>
                     <NavDropdown.Divider />
-                    <NavDropdown.Item><NavLink to="/Akira-Comics/mangas" className="nav-link text-dark">Otros Mangas</NavLink></NavDropdown.Item>
+                    <NavDropdown.Item><NavLink to="/mangas" className="nav-link text-dark">Otros Mangas</NavLink></NavDropdown.Item>
                 </NavDropdown>
-                <NavDropdown to="/Akira-Comics" title="Comics" id="collasible-nav-dropdown">
-                    <NavDropdown.Item><NavLink to="/Akira-Comics/comics/batman"><img className='my-2' width="60" src={Batman} alt="categoria" /></NavLink></NavDropdown.Item>
-                    <NavDropdown.Item><NavLink to="/Akira-Comics/comics/superman"><img className='my-2' width="60" src={Superman} alt="categoria" /></NavLink></NavDropdown.Item>
-                    <NavDropdown.Item><NavLink to="/Akira-Comics/comics/wolverine"><img className='my-2' width="100" src={Lobezno} alt="categoria" /></NavLink></NavDropdown.Item>
-                    <NavDropdown.Item><NavLink to="/Akira-Comics/comics/harrypotter"><img className='my-2' width="100" src={HarryPotter} alt="categoria" /></NavLink></NavDropdown.Item>
-                    <NavDropdown.Item><NavLink to="/Akira-Comics/comics/spiderman"><img className='my-2' width="100" src={Spiderman} alt="categoria" /></NavLink></NavDropdown.Item>
+                <NavDropdown className='titulos' to="/" title="Comics" id="collasible-nav-dropdown">
+                    <NavDropdown.Item><NavLink to="/comics/batman"><img className='my-2' width="60" src={Batman} alt="categoria" /></NavLink></NavDropdown.Item>
+                    <NavDropdown.Item><NavLink to="/comics/superman"><img className='my-2' width="60" src={Superman} alt="categoria" /></NavLink></NavDropdown.Item>
+                    <NavDropdown.Item><NavLink to="/comics/wolverine"><img className='my-2' width="100" src={Lobezno} alt="categoria" /></NavLink></NavDropdown.Item>
+                    <NavDropdown.Item><NavLink to="/comics/harrypotter"><img className='my-2' width="100" src={HarryPotter} alt="categoria" /></NavLink></NavDropdown.Item>
+                    <NavDropdown.Item><NavLink to="/comics/spiderman"><img className='my-2' width="100" src={Spiderman} alt="categoria" /></NavLink></NavDropdown.Item>
                     <NavDropdown.Divider />
-                    <NavDropdown.Item><NavLink to="/Akira-Comics/comics" className="nav-link text-dark">Otros Comics</NavLink></NavDropdown.Item>
+                    <NavDropdown.Item><NavLink to="/comics" className="nav-link text-dark">Otros Comics</NavLink></NavDropdown.Item>
                 </NavDropdown>  
                 </Nav>
                 <CartWidget />
