@@ -1,6 +1,11 @@
 
 @import "./generalidades.scss";
 
+*{
+  padding: 0;
+  margin: 0;
+}
+
 .App {
     text-align: center;
 }

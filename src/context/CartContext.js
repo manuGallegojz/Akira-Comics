@@ -26,20 +26,6 @@ export const ContextoCarritoProductos = ({children}) => {
 
     productosCarrito.map(e => productosIdCarrito.push(e[2]))
 
-    //Función para finalizar compra
-
-    
-
-    let orden = {
-        buyer: {
-            nombre: "",
-            telefono: "",
-            correo: ""
-        },
-        items: productosCarrito,
-        total: totalCarrito
-    }
-
     //Arreglo con los productos de la página
 
     useEffect(()=>{

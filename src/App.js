@@ -12,7 +12,6 @@ import Tienda from './components/Pages/Tienda';
 import ItemDetailContainer from './components/productos/details/ItemDetailContainer';
 import Carrito from './components/carrito/Carrito';
 import CheckOut from './components/carrito/CheckOut';
-import CheckOutInfo from './components/carrito/CheckOutInfo';
 
 //Footer
 
@@ -50,7 +49,6 @@ function App () {
             <Route path="/item/:id" element={<ItemDetailContainer/>}/>
             <Route path="/carrito" element={<Carrito />}/>
             <Route path="/checkout" element={<CheckOut />}/>
-            <Route path="/checkout/info" element={<CheckOutInfo />}/>
 
         </Routes>
       <Footer/>
