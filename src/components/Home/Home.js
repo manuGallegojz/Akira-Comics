@@ -10,14 +10,40 @@ import Header from "../header/Header";
 import ItemListContainer from "../productos/ItemListContainer";
 
 export default function Home () {
-  
+
     return <>
 
         <Header/>
 
         <Filtros />
 
-        <ItemListContainer/>
+        <div className='container'>
+            
+          {/* <h1>Recientes</h1> */}
+
+          <ItemListContainer filtroMuestra="stock" cantidad={4}/>
+
+          {/* {
+          listaProductos.map((e)=>{
+            return (
+              <div key={e.id} className='container mt-5'>
+                  {
+  
+                  }
+              </div>
+          )
+          
+          }) */
+        
+        }
+
+          {/* <h1>Populares</h1> */}
+
+          {/* <ItemListContainer filtroMuestra="popularidad" cantidad={4}/> */}
+
+          {/* <h1>Editoriales y Marcas</h1> */}
+
+        </div>
 
       </>
 }

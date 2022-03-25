@@ -8,9 +8,7 @@ export default function ItemList(props){
 
     const listaProductos = useContext(ThemeContext);
 
-    const [usuarios ,setUsuarios] = useState([]);
-
-    //let listaProductos = props.productos;
+    const [productos ,setProductos] = useState([]);
 
     useEffect(()=>{
 
@@ -20,7 +18,7 @@ export default function ItemList(props){
             }, 1000);
         })
         task.then(resultado => {
-            setUsuarios(resultado);
+            setProductos(resultado);
         });
 
     }, [listaProductos])
@@ -28,7 +26,7 @@ export default function ItemList(props){
     return <React.Fragment>
 
     {
-        usuarios.length === 0 ?
+        productos.length === 0 ?
         <>
             <div className='w-100 d-flex justify-content-center'>
                 <div className="loading show">
@@ -38,8 +36,8 @@ export default function ItemList(props){
         </>
         :
 
-        usuarios.map(e=>{
-            
+        productos.map(e=>{
+
             return(
                 <>
                 {
@@ -61,9 +59,19 @@ export default function ItemList(props){
 
                     </div>
                     
+                    : props.filtro === "ofertas" ? 
+                    
+                    e.oferta === props.filtro &&
+                        
+                        <div key={e.id} className='d-flex flex-column col-md-3 col-6 p-3 rounded product-block'>
+
+                            <Item id={e.id} imagen={e.imagen} titulo ={e.titulo} precio={e.precio*(1/e.oferta)} stock={e.stock} descripcion={e.descripcion}/>
+
+                        </div>
+
                     :
 
-                    e.serie === props.filtro &&
+                    e.serie.toLocaleLowerCase().replace(/\s/g, '') === props.filtro &&
                         
                         <div key={e.id} className='d-flex flex-column col-md-3 col-6 p-3 rounded product-block'>
 
@@ -71,11 +79,10 @@ export default function ItemList(props){
 
                         </div>}
 
-                
-
             </>
 
             )
+            
 
                 })
             }

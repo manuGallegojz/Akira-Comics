@@ -46,6 +46,13 @@
 }
 
 
+//header
+
+.logotipoPosicion{
+    position: relative;
+}
+
+
 
 .cabecera{
     background-image: url("../public/banner.jpg");
@@ -162,6 +169,11 @@ to {
 
 .imagenAlto{
     height: fit-content;
+}
+
+.tiraNavbar{
+    background-color: black;
+    height: 25px;
 }
 
 //bootstrap

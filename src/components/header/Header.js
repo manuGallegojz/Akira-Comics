@@ -7,15 +7,14 @@ import banner3 from '../../assets/img/banner/banner3.jpg';
 import banner4 from '../../assets/img/banner/banner4.jpg';
 import banner5 from '../../assets/img/banner/banner5.jpg';
 import banner6 from '../../assets/img/banner/banner6.jpg';
-import banner7 from '../../assets/img/banner/banner7.jpg';
 import banner8 from '../../assets/img/banner/banner8.jpg';
 
 const ItemListContainer = () => {
 
     return(
-            <div className='container mb-5'>
+            <div className='mb-5'>
 
-                <Carousel variant="dark">
+                <Carousel variant="dark" controls={false} fade={true} interval={4000} indicators={false} >
                 <Carousel.Item>
                     <img
                     className="d-block w-100"
@@ -59,14 +58,6 @@ const ItemListContainer = () => {
                     className="d-block w-100"
                     src={banner6}
                     alt="Sexto slide"
-                    />
-
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img
-                    className="d-block w-100"
-                    src={banner7}
-                    alt="Septimo slide"
                     />
 
                 </Carousel.Item>

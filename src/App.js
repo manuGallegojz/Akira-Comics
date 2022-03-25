@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route} from 'react-router-dom';
 
 import NavBar from "./components/header/navBar";
 import Home from './components/Home/Home';
+import Contacto from './components/Pages/Contacto';
 import Tienda from './components/Pages/Tienda';
 import ItemDetailContainer from './components/productos/details/ItemDetailContainer';
 import Carrito from './components/carrito/Carrito';
@@ -31,20 +32,14 @@ function App () {
       <NavBar/>
         <Routes>
             <Route path="/" element={<Home/>}/>
-            <Route path="/mangas" element={<Tienda tipo="Manga"/>}/>
-            <Route path="/figuras" element={<Tienda tipo="Figuras"/>}/>
-            <Route path="/comics" element={<Tienda tipo="Comic"/>}/>
-            <Route path="/mangas/onepiece" element={<Tienda filtro="One Piece"/>}/>
-            <Route path="/mangas/naruto" element={<Tienda filtro="Naruto"/>}/>
-            <Route path="/mangas/attackontitan" element={<Tienda filtro="Attack on Titan"/>}/>
-            <Route path="/mangas/deathnote" element={<Tienda filtro="Death Note"/>}/>
-            <Route path="/mangas/another" element={<Tienda filtro="Another"/>}/>
+            <Route path="/contacto" element={<Contacto />}/>
 
-            <Route path="/comics/batman" element={<Tienda filtro="Batman"/>}/>
-            <Route path="/comics/superman" element={<Tienda filtro="Superman"/>}/>
-            <Route path="/comics/wolverine" element={<Tienda filtro="Wolverine"/>}/>
-            <Route path="/comics/harrypotter" element={<Tienda filtro="Harry Potter"/>}/>
-            <Route path="/comics/spiderman" element={<Tienda filtro="Spiderman"/>}/>
+            <Route path="/:tipoComic" element={<Tienda/>}/>
+
+            <Route path="/mangas/:idCategoria" element={<Tienda />}/>
+            <Route path="/comics/:idCategoria" element={<Tienda />}/>
+
+            <Route path="/ofertas" element={<Tienda />}/>
 
             <Route path="/item/:id" element={<ItemDetailContainer/>}/>
             <Route path="/carrito" element={<Carrito />}/>
@@ -55,7 +50,8 @@ function App () {
       </BrowserRouter>
 
     </ContextoCarritoProductos>
-      </>
+
+    </>
 }
 
 export default App;

@@ -15,7 +15,7 @@ export default function CartWidget(){
     const [visibleDesplegable, setVisibleDesplegable] = useState(false)
 
     return(
-            <div onMouseEnter={() => setVisibleDesplegable(true)} id='desplegable'>
+            <div className='col-1' onMouseEnter={() => setVisibleDesplegable(true)} id='desplegable'>
             
             <NavLink to="/carrito" className="nav-link text-dark d-flex">
                     <div className='me-3'>

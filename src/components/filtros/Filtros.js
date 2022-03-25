@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faList, faGrip } from '@fortawesome/free-solid-svg-icons';
 
 import Dropdown from 'react-bootstrap/Dropdown';
+import {useCartContext} from '../../context/CartContext';
 
 export default function Filtros(){
 
     const [filtro, setFiltro] = useState(0);
-    const [disposicion, setDisposicion] = useState(0);
     const [nombre, setNombre] = useState("Nombre");
+
+    const {filtros} = useCartContext();
+
+    filtros(filtro);
 
     return(
         <div className='col-12 d-flex align-items-center container my-2 d-flex justify-content-between'>
@@ -32,11 +34,6 @@ export default function Filtros(){
 
             </div>
 
-            <div className='d-flex'>
-                <FontAwesomeIcon className={disposicion === 1 ? 'cursor-pointer ms-3 text-primary' : 'cursor-pointer ms-3'} onClick={()=>{setDisposicion(1)}} icon={faList} />
-                <FontAwesomeIcon className={disposicion === 0 ? 'cursor-pointer ms-3 text-primary' : 'cursor-pointer ms-3'} onClick={()=>{setDisposicion(0)}} icon={faGrip} />
-            </div>
-            
 
         </div>
 

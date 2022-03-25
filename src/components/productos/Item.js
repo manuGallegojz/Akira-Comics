@@ -60,35 +60,42 @@ export default function Item(props){
 
     return(
 
-                <div className="card p-3">
+                <div className="card">
 
-                <NavLink className="text-dark text-decoration-none" to={`/item/${productoDetalle.id}`}>
+                <div className='p-3'>
 
-                    <div className='cursor-pointer'>
+                    <NavLink className="text-dark text-decoration-none" to={`/item/${productoDetalle.id}`}>
 
-                        <img className='mb-3 w-100 imagenAlto' src={productoDetalle.imagen} alt='Producto' />
+                        <div className='cursor-pointer'>
 
-                        <h4 className='text-truncate'>{productoDetalle.titulo}</h4>
+                            <img className='mb-3 w-100 imagenAlto' src={productoDetalle.imagen} alt='Producto' />
+                            
+                            <h4 className='text-truncate'>{productoDetalle.titulo}</h4>
 
-                    </div>
+                        </div>
 
-                </NavLink>
+                    <hr/>
 
-                    <div className="mt-auto">
+                    </NavLink>
 
-                        <div className='d-flex justify-content-between align-items-end'>
+                        <div className="mt-auto">
 
-                            <div>
+                            <div className='d-flex align-items-center'>
 
-                                <h4>{productoDetalle.precio}</h4>
+                                <h4 className='col-6 d-flex justify-content-center'>{productoDetalle.precio}</h4>
 
-                                <span>Stock: {productoDetalle.stock}</span>
+                                <small className='col-6 d-flex justify-content-center text-muted'>Stock: {productoDetalle.stock}</small>
 
                             </div>
 
-                            {productoDetalle.stock !== "0" && <ItemCount producto={productoDetalle} stock={productoDetalle.stock} contador={contador} botonRestar={botonRestar} botonSumar={botonSumar} apretado={nuevaLista}/>}
+                            <div className='d-flex justify-content-center'>
 
-                        </div>
+                                {productoDetalle.stock !== "0" && <ItemCount producto={productoDetalle} stock={productoDetalle.stock} contador={contador} botonRestar={botonRestar} botonSumar={botonSumar} apretado={nuevaLista}/>}
+
+                            </div>
+
+                </div>
+                </div>
 
                         {
 
@@ -96,23 +103,15 @@ export default function Item(props){
                             
                             <div className='d-flex justify-content-between'>
 
-                                <div className='col-4'>
+                                <div className='col-12'>
 
-                                <AgregarProductos textoAgregar={"Añadido"} contadorCarrito={contadorCarrito} agregarProductos={agregarProductos} contador={contador} producto={productoDetalle} agregarFuncion={onAdd} cambioEstado={cambioEstado} apretado={nuevaLista} cambioVisible={visible}/>
-
-                                </div>
-
-                                <div className='col-7'>
-
-                                {nuevaLista[0] && <NavLink to='/carrito'><button className='btn btn-primary mt-3 botonTerminarCompra w-100 text-light'>Terminar compra</button></NavLink>}
+                                    <AgregarProductos lista={nuevaLista[0]} contadorCarrito={contadorCarrito} agregarProductos={agregarProductos} contador={contador} producto={productoDetalle} agregarFuncion={onAdd} cambioEstado={cambioEstado} apretado={nuevaLista} cambioVisible={visible}/>
 
                                 </div>
 
                         </div>}
 
                     </div>
-
-                </div>
             
 
         );

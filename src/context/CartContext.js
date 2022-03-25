@@ -1,8 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { ThemeContext } from './ThemeContext';
+import React, { useContext, useState } from 'react';
+//import { ThemeContext } from './ThemeContext';
 import { ContextoProductos } from './ProductsContext';
-import { collection, getDocs } from 'firebase/firestore';
-import db from '../utils/firebase';
+import { Firebase } from '../firebase/Firebase';
 
 export const CartContext = React.createContext(); 
 
@@ -14,7 +13,7 @@ export const ContextoCarritoProductos = ({children}) => {
 
     const [productosCarrito, setProductosCarrito] = useState([]);
 
-    const [productosHook, setProductosHook] = useState([]);
+    //const [productosHook, setProductosHook] = useState([]);
 
     const [contadorCarrito, setContadorCarrito] = useState(0);
 
@@ -22,12 +21,10 @@ export const ContextoCarritoProductos = ({children}) => {
 
     let totalCarrito = productosCarrito.reduce((acc,i) => (acc + (parseFloat(i[0].precio.slice(1)) * i[1])), 0);
 
-    console.log(productosCarrito[0])
-
     productosCarrito.map(e => productosIdCarrito.push(e[2]))
 
     //Arreglo con los productos de la página
-
+/*
     useEffect(()=>{
         const getData = async() => {
             try{
@@ -40,7 +37,7 @@ export const ContextoCarritoProductos = ({children}) => {
             }
         }
         getData()
-    },[])
+    },[])*/
 
     //Para agregar los productos y también sumar la cantidad total de productos que hay
 
@@ -69,13 +66,13 @@ export const ContextoCarritoProductos = ({children}) => {
 
     return(<>
 
-        <ThemeContext.Provider value={productosHook}>
+        <Firebase.Provider >
             <CartContext.Provider value={{contadorCarrito, productosCarrito, productosIdCarrito, agregarProductos, limpiarProductos, quitarProductos, totalCarrito}}>
                 <ContextoProductos>
                 {children}
                 </ContextoProductos>
             </CartContext.Provider>
-        </ThemeContext.Provider>
+        </Firebase.Provider>
 
         </>)
 

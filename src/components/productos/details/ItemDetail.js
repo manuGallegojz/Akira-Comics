@@ -32,8 +32,6 @@ export default function ItemDetail(props){
     let id = parseInt(props.id);
 
     let nuevaLista = [];
-
-    console.log(nuevaLista[0] === id)
     
     if(productosIdCarrito[0]){
 
@@ -62,23 +60,32 @@ export default function ItemDetail(props){
     }
 
     return (
-        <div className='d-flex'>
+        <>
+        <div className='d-flex justify-content-center mb-4'>
+            <div className='col-10 bg-light border-bottom border-primary'>
+                <h1 className='p-3 mb-0'>{productoDetalle.titulo}</h1>
+            </div>
+        </div>
 
-            <img className="col-5 imagenAlto" src={productoDetalle.imagen} alt="Portada"/>
+        <div className='d-flex justify-content-center'>
 
-            <div>
+            <img className="col-4 imagenAlto border" src={productoDetalle.imagen} alt="Portada"/>
 
-                <h1>{productoDetalle.titulo}</h1>
+            <div className='col-6 ps-5'>
 
-                <p>{productoDetalle.descripcion}</p>
+                <h4>{productoDetalle.precio}</h4>
 
-                <div className='mb-3'>
+                <span className='text-muted'>Stock: {productoDetalle.stock}</span>
 
-                    <h4>{productoDetalle.precio}</h4>
 
-                    <span>Stock: {productoDetalle.stock}</span>
+                <hr/>
 
-                </div>
+                <h6>Autor: </h6>
+                <h6>Editorial: </h6>
+                <h6>Serie: </h6>
+                <h6>Nº de páginas: </h6>
+
+                <hr/>
 
                 {
 
@@ -88,13 +95,13 @@ export default function ItemDetail(props){
 
                     <ItemCount producto={productoDetalle} stock={productoDetalle.stock} contador={contador} botonRestar={botonRestar} botonSumar={botonSumar} apretado={nuevaLista} cambioVisible={visible}/>
 
-                <div className='w-50'>
+                <div className='w-50 mt-3'>
 
-                    <AgregarProductos textoAgregar={"¡Producto Añadido al Carrito!"} contadorCarrito={contadorCarrito} agregarProductos={agregarProductos} contador={contador} producto={productoDetalle} agregarFuncion={onAdd} cambioEstado={cambioEstado} apretado={nuevaLista} cambioVisible={visible}/>
-
-                    {nuevaLista[0] && <NavLink to='/carrito'><button className='btn btn-primary mt-3 botonTerminarCompra w-100 text-light'>Terminar compra</button></NavLink>}
+                    <AgregarProductos lista={nuevaLista[0]}  contadorCarrito={contadorCarrito} agregarProductos={agregarProductos} contador={contador} producto={productoDetalle} agregarFuncion={onAdd} cambioEstado={cambioEstado} apretado={nuevaLista} cambioVisible={visible}/>
 
                 </div>
+
+                
                 
                 </>
                 }
@@ -102,6 +109,24 @@ export default function ItemDetail(props){
             </div>
 
         </div>
+
+        <div className='d-flex justify-content-center mt-4'>
+            <div className='col-10'>
+                        
+                    <h5>Descripción</h5>
+
+                    <hr />
+
+                    <p>{productoDetalle.descripcion}</p> 
+
+                    <h1>Otros Productos</h1>
+
+            </div>
+
+
+        </div>
+
+        </>
     );
 
 }

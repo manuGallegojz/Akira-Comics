@@ -1,11 +1,15 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 export default function AgregarProductos(props){
 
     return <>
 
-        <button className={props.apretado[0] || props.cambioVisible ? 'btn btn-primary mt-3 botonAnadir w-100 disabled text-light' : 'btn btn-primary mt-3 botonAnadir w-100 text-light'} onClick={()=>{props.agregarFuncion(props.producto, props.contador, props.contadorCarrito, props.agregarProductos ); props.cambioEstado()}}>{props.apretado[0] ? props.textoAgregar : "Agregar"}</button>
+    {props.lista ? <NavLink to='/carrito'>
 
+        <button className='btn btn-primary botonAnadir w-100 text-light'>Finalizar compra</button>
+    
+    </NavLink> : <button className='btn btn-dark botonAnadir w-100 text-light' onClick={()=>{props.agregarFuncion(props.producto, props.contador, props.contadorCarrito, props.agregarProductos ); props.cambioEstado()}}>Agregar</button>}
     </>;
 
 }
