@@ -1,14 +1,16 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, {useEffect, useState } from 'react';
 
-import {ThemeContext} from '../../context/ThemeContext'
+import {useFirebaseContext} from '../../firebase/Firebase'
 
 import Item from './Item';
 
 export default function ItemList(props){
 
-    const listaProductos = useContext(ThemeContext);
+    const {productosHook} = useFirebaseContext();
 
-    const [productos ,setProductos] = useState([]);
+    const listaProductos = productosHook;
+
+    const [productos, setProductos] = useState([]);
 
     useEffect(()=>{
 
@@ -22,6 +24,13 @@ export default function ItemList(props){
         });
 
     }, [listaProductos])
+
+    const convertirTipoComic = (string) => {
+        let tipoComicSinLetraFinal = string.substring(0, string.length - 1);
+        let tipoComicFinal = tipoComicSinLetraFinal[0].toUpperCase() + tipoComicSinLetraFinal.slice(1);
+
+        return tipoComicFinal
+    }
 
     return <React.Fragment>
 
@@ -51,7 +60,7 @@ export default function ItemList(props){
 
                     </div> : 
                     
-                    props.tipo === e.tipo &&
+                    convertirTipoComic(props.tipo) === e.tipo &&
 
                     <div key={e.id} className='d-flex flex-column col-md-3 col-6 p-3 rounded product-block'>
 
@@ -82,7 +91,6 @@ export default function ItemList(props){
             </>
 
             )
-            
 
                 })
             }

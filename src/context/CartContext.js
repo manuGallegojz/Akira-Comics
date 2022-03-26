@@ -1,5 +1,4 @@
 import React, { useContext, useState } from 'react';
-//import { ThemeContext } from './ThemeContext';
 import { ContextoProductos } from './ProductsContext';
 import { Firebase } from '../firebase/Firebase';
 
@@ -22,22 +21,6 @@ export const ContextoCarritoProductos = ({children}) => {
     let totalCarrito = productosCarrito.reduce((acc,i) => (acc + (parseFloat(i[0].precio.slice(1)) * i[1])), 0);
 
     productosCarrito.map(e => productosIdCarrito.push(e[2]))
-
-    //Arreglo con los productos de la página
-/*
-    useEffect(()=>{
-        const getData = async() => {
-            try{
-                const getProducts = collection(db, "productos")
-                const col = await getDocs(getProducts)
-                const result = col.docs.map((doc, index) => {return {id:index, ...doc.data()}})
-                setProductosHook(result)
-            } catch (err) {
-                console.warn("error", err)
-            }
-        }
-        getData()
-    },[])*/
 
     //Para agregar los productos y también sumar la cantidad total de productos que hay
 
@@ -64,16 +47,14 @@ export const ContextoCarritoProductos = ({children}) => {
 
     }
 
-    return(<>
-
-        <Firebase.Provider >
+    return(
+        <Firebase>
             <CartContext.Provider value={{contadorCarrito, productosCarrito, productosIdCarrito, agregarProductos, limpiarProductos, quitarProductos, totalCarrito}}>
                 <ContextoProductos>
                 {children}
                 </ContextoProductos>
             </CartContext.Provider>
-        </Firebase.Provider>
-
-        </>)
+        </Firebase>
+        )
 
 }

@@ -97,7 +97,7 @@ export default function Carrito(){
 
             <div className='d-flex mt-4'>
 
-                {productosCarrito.length !== 0 && <NavLink to='/checkout'><button className='btn btn-primary mb-5 text-light'>Terminar Compra</button></NavLink>}
+                {productosCarrito.length !== 0 && <NavLink to='/checkout'><button className='btn btn-primary mb-5 text-light'>Ingresar Datos</button></NavLink>}
 
                 {productosCarrito.length !== 0 && <button className='btn btn-primary mb-5 ms-4 text-light' onClick={limpiarProductos}>Vaciar Carrito</button>}
 

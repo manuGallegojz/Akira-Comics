@@ -60,7 +60,7 @@ export default function Item(props){
 
     return(
 
-                <div className="card">
+                <div className="card" key={id}>
 
                 <div className='p-3'>
 
@@ -80,7 +80,7 @@ export default function Item(props){
 
                         <div className="mt-auto">
 
-                            <div className='d-flex align-items-center'>
+                            <div className='d-flex align-items-center mb-2'>
 
                                 <h4 className='col-6 d-flex justify-content-center'>{productoDetalle.precio}</h4>
 

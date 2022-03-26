@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from 'react';
 import { collection, getDocs } from 'firebase/firestore';
 import db from '../utils/firebase';
 
-export const FirebaseContext = React.createContext([]); 
+export const FirebaseContext = React.createContext(); 
 
 export const useFirebaseContext = () => useContext(FirebaseContext);
 
@@ -32,7 +32,6 @@ export const Firebase = ({children}) => {
             productosHook.sort((a, b) => {
                 let fa = a.titulo,
                     fb = b.titulo;
-                    console.log(fa, fb)
             
                 if (fa < fb) {
                     return -1;
@@ -42,18 +41,6 @@ export const Firebase = ({children}) => {
                 }
                 return 0;
             })
-            console.log(productosHook.sort((a, b) => {
-                let fa = a.titulo,
-                    fb = b.titulo;
-            
-                if (fa < fb) {
-                    return -1;
-                }
-                if (fa > fb) {
-                    return 1;
-                }
-                return 0;
-            }));
         }else if(filtro === 2){
 
         } else if(filtro === 3){
@@ -63,8 +50,8 @@ export const Firebase = ({children}) => {
     }
 
     return(
-        <useFirebaseContext.Provider value={{productosHook, filtros}}>
+        <FirebaseContext.Provider value={{productosHook, filtros}}>
             {children}
-        </useFirebaseContext.Provider>
+        </FirebaseContext.Provider>
     )
 }

@@ -1,12 +1,14 @@
 import React, {useContext} from 'react';
 import { useParams } from 'react-router-dom';
-import {ThemeContext} from '../../../context/ThemeContext'
+import {useFirebaseContext} from '../../../firebase/Firebase'
 
 import ItemDetail from "./ItemDetail";
 
 export default function ItemDetailContainer(){
 
-    const listaProductos = useContext(ThemeContext);
+    const {productosHook} = useFirebaseContext();
+
+    const listaProductos = productosHook;
 
     const {id} = useParams();
 
