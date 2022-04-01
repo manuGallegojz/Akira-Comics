@@ -84,10 +84,6 @@ const NavBar = () => {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="d-flex justify-content-evenly w-100">
                     <div className='d-flex align-items-center'>
-                    <img src={iconoDescuento} width="40" alt='Icono' />
-                        <Nav.Link className='titulos' href="/ofertas">Ofertas</Nav.Link>
-                    </div>
-                    <div className='d-flex align-items-center'>
                     <img src={iconoTelefono} width="40" alt='Icono' />
                         <Nav.Link className='titulos' href="/contacto">Contacto</Nav.Link>
                     </div>

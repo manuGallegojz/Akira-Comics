@@ -60,9 +60,6 @@ export default function CheckOut(){
 
     const {productosCarrito, totalCarrito, limpiarProductos} = useCartContext();
 
-
-    // Pass the useFormik() hook initial form values and a submit function that will
-        // be called when the form is submitted
         const formik = useFormik({
             initialValues: {
             nombre: '',
@@ -86,27 +83,27 @@ export default function CheckOut(){
         });
 
     return(<>
-        {mostrar === false ? 
-            
+        {mostrar === false ?
+
     <div className='container border col-6 rounded p-3 mt-5'>
 
-    <Form onSubmit={formik.handleSubmit}> 
+    <Form onSubmit={formik.handleSubmit}>
         <Row className="mb-4">
             <Form.Group as={Col}>
             <Form.Label>Nombre y Apellido</Form.Label>
-            <Form.Control 
+            <Form.Control
                 id="nombre"
                 name="nombre"
                 type="text"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                value={formik.values.firstName}/>
+                value={formik.values.nombre}/>
                 {formik.touched.nombre && formik.errors.nombre ? <div className='text-muted position-absolute mt-1 fontSizeSmall'>{formik.errors.nombre}</div> : null}
             </Form.Group>
 
             <Form.Group as={Col}>
             <Form.Label>Email</Form.Label>
-            <Form.Control 
+            <Form.Control
                 id="email"
                 name="email"
                 type="email"
@@ -119,7 +116,7 @@ export default function CheckOut(){
 
         <Form.Group className="mb-4">
             <Form.Label>Dirección</Form.Label>
-            <Form.Control 
+            <Form.Control
                 id="direccion"
                 name="direccion"
                 type="direccion"
@@ -131,7 +128,7 @@ export default function CheckOut(){
 
         <Form.Group className="mb-4">
             <Form.Label>Casa, deparatamento, etc...</Form.Label>
-            <Form.Control 
+            <Form.Control
                 id="vivienda"
                 name="vivienda"
                 type="vivienda"
@@ -144,7 +141,7 @@ export default function CheckOut(){
         <Row className="mb-4">
             <Form.Group as={Col}>
             <Form.Label>Ciudad</Form.Label>
-            <Form.Control 
+            <Form.Control
                 id="ciudad"
                 name="ciudad"
                 type="ciudad"
@@ -156,7 +153,7 @@ export default function CheckOut(){
 
             <Form.Group as={Col}>
             <Form.Label>Barrio</Form.Label>
-            <Form.Control 
+            <Form.Control
                 id="barrio"
                 name="barrio"
                 type="barrio"
@@ -168,7 +165,7 @@ export default function CheckOut(){
 
             <Form.Group as={Col}>
             <Form.Label>Código Postal</Form.Label>
-            <Form.Control 
+            <Form.Control
                 id="zip"
                 name="zip"
                 type="zip"
@@ -184,8 +181,8 @@ export default function CheckOut(){
             </Button>
         </Form>
 
-    </div> :     
-    
+    </div> :
+
     <div className='container mt-4'>
 
         <h1>Información de la Compra</h1>
@@ -220,7 +217,7 @@ export default function CheckOut(){
 
                     </div>
 
-                        
+
                             <div>
 
                                 <h4>{producto.precio}</h4>
@@ -279,7 +276,7 @@ export default function CheckOut(){
 
         <NavLink to='/'><button className='btn btn-primary mb-5 text-light' onClick={limpiarProductos}>Finalizar pedido</button></NavLink>
 
-    </div> 
+    </div>
 
 
     }
