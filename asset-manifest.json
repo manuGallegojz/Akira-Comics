@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Akira-Comics/static/css/main.960f271f.css",
-    "main.js": "/Akira-Comics/static/js/main.3a0e1958.js",
+    "main.js": "/Akira-Comics/static/js/main.dc78a42f.js",
     "static/js/787.fe6a917d.chunk.js": "/Akira-Comics/static/js/787.fe6a917d.chunk.js",
     "static/media/attackontitan.png": "/Akira-Comics/static/media/attackontitan.1e1dc8338509d35bdc3f.png",
     "static/media/Spiderman.png": "/Akira-Comics/static/media/Spiderman.49437e7d04ebaf6bbab2.png",
@@ -23,20 +23,20 @@
     "static/media/another.png": "/Akira-Comics/static/media/another.c63d6a12c879d1381e85.png",
     "static/media/batman.png": "/Akira-Comics/static/media/batman.26e9365c352223124d09.png",
     "static/media/logoAkira.png": "/Akira-Comics/static/media/logoAkira.a9a13a5d146e1fbb6893.png",
+    "static/media/telefono.svg": "/Akira-Comics/static/media/telefono.e529c5ad60719bc9eed7b9b36e108fe5.svg",
     "static/media/descuento.svg": "/Akira-Comics/static/media/descuento.f8044e17a05fd774da2c84fa315bf993.svg",
     "static/media/iconoComic.svg": "/Akira-Comics/static/media/iconoComic.a2a74925af848888e00d69c0bc60513f.svg",
-    "static/media/telefono.svg": "/Akira-Comics/static/media/telefono.d19f5e1cdb2b331c2e954b1ef23fa210.svg",
     "static/media/iconoManga.svg": "/Akira-Comics/static/media/iconoManga.d71c1250a33c7e5cb3bff55f3b194cd6.svg",
     "static/media/iconoEmail.svg": "/Akira-Comics/static/media/iconoEmail.4323c527d4ee1ceabc15de504c4bc145.svg",
     "static/media/iconoTelefono.svg": "/Akira-Comics/static/media/iconoTelefono.99e8ef99f27e43abf235903459613e88.svg",
     "static/media/iconoMapa.svg": "/Akira-Comics/static/media/iconoMapa.2af6b089f878f7138d2411961977af8f.svg",
     "index.html": "/Akira-Comics/index.html",
     "main.960f271f.css.map": "/Akira-Comics/static/css/main.960f271f.css.map",
-    "main.3a0e1958.js.map": "/Akira-Comics/static/js/main.3a0e1958.js.map",
+    "main.dc78a42f.js.map": "/Akira-Comics/static/js/main.dc78a42f.js.map",
     "787.fe6a917d.chunk.js.map": "/Akira-Comics/static/js/787.fe6a917d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.960f271f.css",
-    "static/js/main.3a0e1958.js"
+    "static/js/main.dc78a42f.js"
   ]
 }
