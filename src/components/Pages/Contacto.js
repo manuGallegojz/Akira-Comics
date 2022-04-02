@@ -1,5 +1,5 @@
 import React from 'react'; 
-import { Form, Col, Button } from 'react-bootstrap';
+import { Form, Row, Col, Button } from 'react-bootstrap';
 import { useFormik } from 'formik';
 import Swal from 'sweetalert2'
 
@@ -17,38 +17,81 @@ const Validate = values => {
         errors.email = 'Email inválido.';
     }
 
-    if (!values.asunto) {
-        errors.asunto = `Campo obligatorio.`;
-    } else if (values.asunto.length > 30) {
-        errors.asunto = 'Debe tener menos de 30 caracteres.';
+    if (!values.direccion) {
+        errors.direccion = `Campo obligatorio.`;
+    } else if (values.direccion.length > 30) {
+        errors.direccion = 'Debe tener menos de 30 caracteres.';
     }
 
-    if (!values.mensaje) {
-        errors.mensaje = `Campo obligatorio.`;
-    } else if (values.mensaje.length > 50) {
-        errors.mensaje = 'Debe tener menos de 50 caracteres.';
+    if (!values.vivienda) {
+        errors.vivienda = `Campo obligatorio.`;
+    } else if (values.vivienda.length > 50) {
+        errors.vivienda = 'Debe tener menos de 50 caracteres.';
+    }
+
+    if (!values.ciudad) {
+        errors.ciudad = `Campo obligatorio.`;
+    } else if (values.ciudad.length > 20) {
+        errors.ciudad = 'Debe tener menos de 20 caracteres.';
+    }
+
+    if (!values.barrio) {
+        errors.barrio = `Campo obligatorio.`;
+    } else if (values.barrio.length > 25) {
+        errors.barrio = 'Debe tener menos de 25 caracteres.';
+    }
+
+    if (!values.zip) {
+        errors.zip = `Campo obligatorio.`;
+    } else if (values.zip.length > 10) {
+        errors.zip = 'Debe tener menos de 10 caracteres.';
     }
 
     return errors;
 };
+
 export default function Contacto(){
+
+    function cambiarNombre(string) {  
+        let textoMinusculas = string.toLowerCase();
+        let textoNuevo = textoMinusculas[0].toUpperCase() + string.slice(1); 
+        return textoNuevo;
+    } 
 
     const formik = useFormik({
         initialValues: {
         nombre: '',
         email: '',
-        asunto: '',
-        mensaje: ''
+        direccion: '',
+        vivienda: '',
+        ciudad: '',
+        barrio: '',
+        zip: ''
         },
         Validate,
         onSubmit: values => {
-            Swal.fire(
-                'Good job!',
-                'You clicked the button!',
-                'success'
-            )
-        },
+            let id = Math.floor((Math.random() * (20000-10000))+10000);
+            console.log(id);
+        }
     });
+
+    // const formik = useFormik({
+    //     initialValues: {
+    //     nombre: '',
+    //     email: '',
+    //     asunto: '',
+    //     mensaje: ''
+    //     },
+    //     Validate,
+    //     onSubmit: values => {
+    //         alert("...");
+    //         /*Swal.fire({
+    //         confirmButtonColor: '#ED2E38',
+    //         title:'¡Enviado!',
+    //         text: cambiarNombre(values.nombre) + ', te responderemos lo antes posible.',
+    //         icon:'success'})*/
+    //     },
+    // });
 
     return(
         <>
@@ -120,11 +163,11 @@ export default function Contacto(){
                 <div className="col-lg-6 col-12 sanserif">
 
                         <h4 className="serif verde">Mandanos un Mensaje</h4>
-
-                    <Form onSubmit={formik.handleSubmit}>
-
-                        <Form.Group as={Col} className="mb-3">
-                        <Form.Label>Nombre</Form.Label>
+                        
+                <Form onSubmit={formik.handleSubmit}>
+                    <Row className="mb-4">
+                        <Form.Group as={Col}>
+                        <Form.Label>Nombre y Apellido</Form.Label>
                         <Form.Control
                             id="nombre"
                             name="nombre"
@@ -135,7 +178,7 @@ export default function Contacto(){
                             {formik.touched.nombre && formik.errors.nombre ? <div className='text-muted position-absolute mt-1 fontSizeSmall'>{formik.errors.nombre}</div> : null}
                         </Form.Group>
 
-                        <Form.Group as={Col} className="mb-3">
+                        <Form.Group as={Col}>
                         <Form.Label>Email</Form.Label>
                         <Form.Control
                             id="email"
@@ -146,36 +189,73 @@ export default function Contacto(){
                             value={formik.values.email}/>
                             {formik.touched.email && formik.errors.email ? <div className='text-muted position-absolute mt-1 fontSizeSmall'>{formik.errors.email}</div> : null}
                         </Form.Group>
-
-                        <Form.Group as={Col} className="mb-3">
-                        <Form.Label>Asunto</Form.Label>
-                        <Form.Control
-                            id="asunto"
-                            name="asunto"
-                            type="text"
-                            onChange={formik.handleChange}
-                            onBlur={formik.handleBlur}
-                            value={formik.values.asunto}/>
-                            {formik.touched.asunto && formik.errors.asunto ? <div className='text-muted position-absolute mt-1 fontSizeSmall'>{formik.errors.asunto}</div> : null}
+                    </Row>
+                        <Form.Group className="mb-4">
+                            <Form.Label>Dirección</Form.Label>
+                            <Form.Control
+                                id="direccion"
+                                name="direccion"
+                                type="text"
+                                onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
+                                value={formik.values.direccion}/>
+                                {formik.touched.direccion && formik.errors.direccion ? <div className='text-muted position-absolute mt-1 fontSizeSmall'>{formik.errors.direccion}</div> : null}
                         </Form.Group>
 
-                        <Form.Group as={Col}>
-                        <Form.Label>Dejanos un mensaje</Form.Label>
-                        <Form.Control
-                            id="mensaje"
-                            name="mensaje"
-                            type="text"
-                            onChange={formik.handleChange}
-                            onBlur={formik.handleBlur}
-                            value={formik.values.mensaje}/>
-                            {formik.touched.mensaje && formik.errors.mensaje ? <div className='text-muted position-absolute mt-1 fontSizeSmall'>{formik.errors.mensaje}</div> : null}
+                        <Form.Group className="mb-4">
+                            <Form.Label>Casa, deparatamento, etc...</Form.Label>
+                            <Form.Control
+                                id="vivienda"
+                                name="vivienda"
+                                type="text"
+                                onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
+                                value={formik.values.vivienda}/>
+                                {formik.touched.vivienda && formik.errors.vivienda ? <div className='text-muted position-absolute mt-1 fontSizeSmall'>{formik.errors.vivienda}</div> : null}
                         </Form.Group>
 
-                        <Button variant="primary" type="submit" className='btn btn-primary text-white mt-3 mb-2'>
-                            Enviar
-                        </Button>
+                        <Row className="mb-4">
+                            <Form.Group as={Col}>
+                            <Form.Label>Ciudad</Form.Label>
+                            <Form.Control
+                                id="ciudad"
+                                name="ciudad"
+                                type="text"
+                                onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
+                                value={formik.values.ciudad}/>
+                                {formik.touched.ciudad && formik.errors.ciudad ? <div className='text-muted position-absolute mt-1 fontSizeSmall'>{formik.errors.ciudad}</div> : null}
+                            </Form.Group>
 
-                    </Form>
+                            <Form.Group as={Col}>
+                            <Form.Label>Barrio</Form.Label>
+                            <Form.Control
+                                id="barrio"
+                                name="barrio"
+                                type="text"
+                                onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
+                                value={formik.values.barrio}/>
+                                {formik.touched.barrio && formik.errors.barrio ? <div className='text-muted position-absolute mt-1 fontSizeSmall'>{formik.errors.barrio}</div> : null}
+                            </Form.Group>
+
+                            <Form.Group as={Col}>
+                            <Form.Label>Código Postal</Form.Label>
+                            <Form.Control
+                                id="zip"
+                                name="zip"
+                                type="text"
+                                onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
+                                value={formik.values.zip}/>
+                                {formik.touched.zip && formik.errors.zip ? <div className='text-muted position-absolute mt-1 fontSizeSmall'>{formik.errors.zip}</div> : null}
+                            </Form.Group>
+                        </Row>
+
+                            <Button variant="primary" type="submit" className='text-light mt-2'>
+                                Enviar
+                            </Button>
+                        </Form>
 
                 </div>
 

@@ -101,7 +101,7 @@ export default function CheckOut(){
                 {formik.touched.nombre && formik.errors.nombre ? <div className='text-muted position-absolute mt-1 fontSizeSmall'>{formik.errors.nombre}</div> : null}
             </Form.Group>
 
-            <Form.Group as={Col}>
+            <Form.Group as={Col} requiered>
             <Form.Label>Email</Form.Label>
             <Form.Control
                 id="email"
@@ -114,12 +114,12 @@ export default function CheckOut(){
             </Form.Group>
         </Row>
 
-        <Form.Group className="mb-4">
+        <Form.Group className="mb-4" required>
             <Form.Label>Dirección</Form.Label>
             <Form.Control
                 id="direccion"
                 name="direccion"
-                type="direccion"
+                type="text"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 value={formik.values.direccion}/>
@@ -131,7 +131,7 @@ export default function CheckOut(){
             <Form.Control
                 id="vivienda"
                 name="vivienda"
-                type="vivienda"
+                type="text"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 value={formik.values.vivienda}/>
@@ -144,7 +144,7 @@ export default function CheckOut(){
             <Form.Control
                 id="ciudad"
                 name="ciudad"
-                type="ciudad"
+                type="text"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 value={formik.values.ciudad}/>
@@ -156,7 +156,7 @@ export default function CheckOut(){
             <Form.Control
                 id="barrio"
                 name="barrio"
-                type="barrio"
+                type="text"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 value={formik.values.barrio}/>
@@ -168,7 +168,7 @@ export default function CheckOut(){
             <Form.Control
                 id="zip"
                 name="zip"
-                type="zip"
+                type="text"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 value={formik.values.zip}/>

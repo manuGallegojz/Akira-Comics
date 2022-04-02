@@ -56,19 +56,9 @@ export default function Carrito(){
                             <div>
 
                                 <h4>{productoMuestra.precio}</h4>
-                                <span className='text-muted'>Stock: {cantidad}</span>
+                                <span className='text-muted'>x{cantidad}</span>
 
                             </div>
-
-                            <ul className='list-unstyled mb-0'>
-                                <li>Autor:</li>
-                                <li>Editorial:</li>
-                                <li>Serie:</li>
-                                <li>Nº de páginas:</li>
-                            </ul>
-
-
-
 
                     </div>
                 </div>

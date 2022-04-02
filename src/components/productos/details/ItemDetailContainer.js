@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
 import {useFirebaseContext} from '../../../firebase/Firebase'
 
@@ -24,7 +24,7 @@ export default function ItemDetailContainer(){
 
                 e.id === id &&
 
-                    <ItemDetail id={e.id} imagen={e.imagen} titulo={e.titulo} descripcion={e.descripcion} stock={e.stock} precio={e.precio}/>
+                    <ItemDetail autor={e.autor} serie={e.serie} editorial={e.editorial} paginas={e.paginas} id={e.id} imagen={e.imagen} titulo={e.titulo} descripcion={e.descripcion} stock={e.stock} precio={e.precio}/>
 
                 }
             </div>

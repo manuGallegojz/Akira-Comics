@@ -12,8 +12,6 @@ export const ContextoCarritoProductos = ({children}) => {
 
     const [productosCarrito, setProductosCarrito] = useState([]);
 
-    //const [productosHook, setProductosHook] = useState([]);
-
     const [contadorCarrito, setContadorCarrito] = useState(0);
 
     let productosIdCarrito = [];

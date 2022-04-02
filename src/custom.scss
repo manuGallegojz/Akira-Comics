@@ -48,8 +48,13 @@
 
 //header
 
-.logotipoPosicion{
+.logotipo{
     position: relative;
+    transition: transform 0.5s;
+}
+
+.logotipo:hover{
+    transform: scale(1.05);
 }
 
 
@@ -167,8 +172,13 @@ to {
     background-color: gray;
 }
 
-.imagenAlto{
+.imagenItems{
     height: fit-content;
+    transition: transform 0.5s;
+}
+
+.imagenItems:hover{
+    transform: scale(1.05) rotate(-5deg);
 }
 
 .tiraNavbar{

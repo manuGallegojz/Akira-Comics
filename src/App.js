@@ -39,8 +39,6 @@ function App () {
             <Route path="/mangas/:idCategoria" element={<Tienda />}/>
             <Route path="/comics/:idCategoria" element={<Tienda />}/>
 
-            <Route path="/ofertas" element={<Tienda filtro="ofertas"/>}/>
-
             <Route path="/item/:id" element={<ItemDetailContainer/>}/>
             <Route path="/carrito" element={<Carrito />}/>
             <Route path="/checkout" element={<CheckOut />}/>

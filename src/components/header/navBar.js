@@ -76,7 +76,7 @@ const NavBar = () => {
 
             {/*----logotipo----*/}
 
-            <NavLink className="navbar-brand logotipoPosicion d-flex justify-content-center col-2" to="/"><img width="120" height="120" src={logoAkira} alt="logotipo" /></NavLink>
+            <NavLink className="navbar-brand logotipo d-flex justify-content-center col-2" to="/"><img width="120" height="120" src={logoAkira} alt="logotipo" /></NavLink>
             
             {/*----parte derecha----*/}
 
@@ -85,7 +85,7 @@ const NavBar = () => {
                     <Nav className="d-flex justify-content-evenly w-100">
                     <div className='d-flex align-items-center'>
                     <img src={iconoTelefono} width="40" alt='Icono' />
-                        <Nav.Link className='titulos' href="/contacto">Contacto</Nav.Link>
+                        <NavLink className='nav-link titulos' to="/contacto">Contacto</NavLink>
                     </div>
 
                     {/*----carrito----*/}

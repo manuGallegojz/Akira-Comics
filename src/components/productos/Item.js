@@ -68,7 +68,7 @@ export default function Item(props){
 
                         <div className='cursor-pointer'>
 
-                            <img className='mb-3 w-100 imagenAlto' src={productoDetalle.imagen} alt='Producto' />
+                            <img className='mb-3 w-100 imagenItems' src={productoDetalle.imagen} alt='Producto' />
                             
                             <h4 className='text-truncate'>{productoDetalle.titulo}</h4>
 
