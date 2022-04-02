@@ -1,6 +1,6 @@
-# Video Muestra de la Nacegacion
+# Video Muestra de la Navegación
 
-https://drive.google.com/file/d/1l7Al4oScQlpeFD76UyXI16vHkRfuSSzr/view?usp=sharing
+https://drive.google.com/file/d/1G_VCmoqyBsReY_VyHqh6PLSxmp9LN-2F/view?usp=sharing
 
 # Getting Started with Create React App
 

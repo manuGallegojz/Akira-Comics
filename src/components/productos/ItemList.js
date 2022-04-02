@@ -17,7 +17,7 @@ export default function ItemList(props){
         const task = new Promise((resolve, reject) =>{
             setTimeout(() => {
                 resolve(listaProductos);
-            }, 1000);
+            }, 2000);
         })
         task.then(resultado => {
             setProductos(resultado);

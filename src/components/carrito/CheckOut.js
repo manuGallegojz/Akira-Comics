@@ -97,6 +97,7 @@ export default function CheckOut(){
             <Form.Group as={Col}>
             <Form.Label htmlFor="firstName">Nombre y Apellido</Form.Label>
             <Form.Control
+                autocomplete="off"
                 id="nombre"
                 name="nombre"
                 type="text"
@@ -109,6 +110,7 @@ export default function CheckOut(){
             <Form.Group as={Col}>
             <Form.Label>Email</Form.Label>
             <Form.Control
+                autocomplete="off"
                 id="email"
                 name="email"
                 type="email"
@@ -122,6 +124,7 @@ export default function CheckOut(){
         <Form.Group className="mb-4">
             <Form.Label>Dirección</Form.Label>
             <Form.Control
+                autocomplete="off"
                 id="direccion"
                 name="direccion"
                 type="text"
@@ -134,6 +137,7 @@ export default function CheckOut(){
         <Form.Group className="mb-4">
             <Form.Label>Casa, deparatamento, etc...</Form.Label>
             <Form.Control
+                autocomplete="off"
                 id="vivienda"
                 name="vivienda"
                 type="text"
@@ -147,6 +151,7 @@ export default function CheckOut(){
             <Form.Group as={Col}>
             <Form.Label>Ciudad</Form.Label>
             <Form.Control
+                autocomplete="off"
                 id="ciudad"
                 name="ciudad"
                 type="text"
@@ -159,6 +164,7 @@ export default function CheckOut(){
             <Form.Group as={Col}>
             <Form.Label>Barrio</Form.Label>
             <Form.Control
+                autocomplete="off"
                 id="barrio"
                 name="barrio"
                 type="text"
@@ -171,6 +177,7 @@ export default function CheckOut(){
             <Form.Group as={Col}>
             <Form.Label>Código Postal</Form.Label>
             <Form.Control
+                autocomplete="off"
                 id="zip"
                 name="zip"
                 type="text"
