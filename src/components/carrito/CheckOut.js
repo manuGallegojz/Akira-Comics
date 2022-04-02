@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import { Form, Row, Col, Button } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import { useFormik } from 'formik';
+import Swal from 'sweetalert2';
 
 import {useCartContext} from '../../context/CartContext';
 
-const Validate = values => {
+const validate = values => {
     const errors = {};
     if (!values.nombre) {
         errors.nombre = `Campo obligatorio.`;
@@ -56,9 +57,15 @@ export default function CheckOut(){
 
     const [mostrar, setMostrar] = useState(false);
 
-    const [orden, setOrden] = useState([]);
-
     const {productosCarrito, totalCarrito, limpiarProductos} = useCartContext();
+
+    const [orden, setOrden] = useState(productosCarrito);
+
+    const [total, setTotal] = useState(totalCarrito);
+
+    const [id, setId] = useState();
+    
+    const [values, setValues] = useState();
 
         const formik = useFormik({
             initialValues: {
@@ -70,16 +77,14 @@ export default function CheckOut(){
             barrio: '',
             zip: ''
             },
-            Validate,
+            validate,
             onSubmit: values => {
-                let id = Math.floor((Math.random() * (20000-10000))+10000);
-                setOrden([
-                    values,
-                    {items: productosCarrito,
-                    id: id,
-                    total: totalCarrito}])
+                setId(Math.floor((Math.random() * (20000-10000))+10000));
+                setTotal(totalCarrito);
+                setValues(values);
                 setMostrar(true);
-            },
+                limpiarProductos();
+            }
         });
 
     return(<>
@@ -87,10 +92,10 @@ export default function CheckOut(){
 
     <div className='container border col-6 rounded p-3 mt-5'>
 
-    <Form onSubmit={formik.handleSubmit}>
+    <form onSubmit={formik.handleSubmit}>
         <Row className="mb-4">
             <Form.Group as={Col}>
-            <Form.Label>Nombre y Apellido</Form.Label>
+            <Form.Label htmlFor="firstName">Nombre y Apellido</Form.Label>
             <Form.Control
                 id="nombre"
                 name="nombre"
@@ -101,7 +106,7 @@ export default function CheckOut(){
                 {formik.touched.nombre && formik.errors.nombre ? <div className='text-muted position-absolute mt-1 fontSizeSmall'>{formik.errors.nombre}</div> : null}
             </Form.Group>
 
-            <Form.Group as={Col} requiered>
+            <Form.Group as={Col}>
             <Form.Label>Email</Form.Label>
             <Form.Control
                 id="email"
@@ -114,7 +119,7 @@ export default function CheckOut(){
             </Form.Group>
         </Row>
 
-        <Form.Group className="mb-4" required>
+        <Form.Group className="mb-4">
             <Form.Label>Dirección</Form.Label>
             <Form.Control
                 id="direccion"
@@ -179,7 +184,7 @@ export default function CheckOut(){
             <Button variant="primary" type="submit" className='text-light mt-2'>
                 Enviar
             </Button>
-        </Form>
+        </form>
 
     </div> :
 
@@ -188,8 +193,8 @@ export default function CheckOut(){
         <h1>Información de la Compra</h1>
 
         <hr/>
-
-        {productosCarrito.map(e => {
+ 
+        {orden.map(e => {
 
         const producto = e[0];
 
@@ -223,17 +228,7 @@ export default function CheckOut(){
                                 <h4>{producto.precio}</h4>
                                 <span className='text-muted'>Stock: {cantidad}</span>
 
-                            </div>
-
-                            <ul className='list-unstyled mb-0'>
-                                <li>Autor:</li>
-                                <li>Editorial:</li>
-                                <li>Serie:</li>
-                                <li>Nº de páginas:</li>
-                            </ul>
-
-
-
+                            </div>  
 
                     </div>
                 </div>
@@ -250,31 +245,31 @@ export default function CheckOut(){
         })
         }
 
-        <h2>Total: ${orden[1].total}.00</h2>
+        <h2>Total: ${total}</h2>
 
         <hr/>
 
         <h2>Detalles</h2>
 
-        {   <>
-
             <ul className='list-unstyled'>
-                <li><b>Nombre:</b> {orden[0].nombre}</li>
-                <li><b>Email:</b> {orden[0].email}</li>
-                <li><b>Dirección:</b> {orden[0].direccion}</li>
-                <li><b>Domicilio:</b> {orden[0].vivienda}</li>
-                <li><b>Ciudad:</b> {orden[0].ciudad}</li>
-                <li><b>Barrio:</b> {orden[0].barrio}</li>
-                <li><b>Código Postal:</b> {orden[0].zip}</li>
-            </ul>
+                <li><b>Nombre:</b> {values.nombre}</li>
+                <li><b>Email:</b> {values.email}</li>
+                <li><b>Dirección:</b> {values.direccion}</li>
+                <li><b>Domicilio:</b> {values.vivienda}</li>
+                <li><b>Ciudad:</b> {values.ciudad}</li>
+                <li><b>Barrio:</b> {values.barrio}</li>
+                <li><b>Código Postal:</b> {values.zip}</li>
+            </ul> 
 
-            <h3>Id: {orden[1].id}</h3>
-
-            </>
-        }
+            <h3>Id: {id}</h3>
 
 
-        <NavLink to='/'><button className='btn btn-primary mb-5 text-light' onClick={limpiarProductos}>Finalizar pedido</button></NavLink>
+
+        <NavLink to='/'><button className='btn btn-primary mb-5 text-light' onClick={()=>{Swal.fire({
+            confirmButtonColor: '#ED2E38',
+            title:'¡Pedido finalizado!',
+            text: "Te estaremos contactando por email lo antes posible.",
+            icon:'success'})}}>Finalizar pedido</button></NavLink>
 
     </div>
 

@@ -186,6 +186,16 @@ to {
     height: 25px;
 }
 
+//contacto
+
+.escala{
+    transition: transform 0.5s;
+}
+
+.escala:hover{
+    transform: scale(1.05);
+}
+
 //bootstrap
 
 

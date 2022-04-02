@@ -88,9 +88,7 @@ export default function CartWidget(){
 
             {productosCarrito.length !== 0 && <h4 className='mb-3'>Total: ${totalProductos}.00</h4>}
 
-            <NavLink to='/'><button className='btn btn-primary text-light'>Volver a la tienda</button></NavLink>
-
-            {productosCarrito.length !== 0 && <button className='btn btn-primary ms-4 text-light' onClick={limpiarProductos}>Vaciar Carrito</button>}
+            {productosCarrito.length !== 0 && <button className='btn btn-primary text-light' onClick={limpiarProductos}>Vaciar Carrito</button>}
 
             </div>}
             </div>

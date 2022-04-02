@@ -10,7 +10,7 @@ const ItemListContainer = (props) => {
     const {idCategoria} = useParams();
 
     return(
-            <div className='container d-flex flex-wrap'>
+            <div className='container d-flex flex-wrap mt-4'>
 
                 <ItemList tipo={tipoComic} filtro={idCategoria} filtroMuestra={props.filtroMuestra} cantidad={props.cantidad}/>
 

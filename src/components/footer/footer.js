@@ -20,18 +20,17 @@ export default function Footer(){
 
                         <div className='col-md-12 text-center text-light'>
 
-                            <a href='/'><img width="50" height="50" src={logoAkira} alt="logotipo" /></a>
-
+                            <NavLink to='/'><img width="50" height="50" src={logoAkira} alt="logotipo" /></NavLink>
                             <div className="d-flex mt-3 justify-content-center">
                                 <NavLink className="nav-link text-white" to="/mangas">Mangas</NavLink>
-                                <NavLink className="nav-link text-white" to="/">Figuras</NavLink>
-                                <NavLink className="nav-link text-white" to="/">Carrito</NavLink>
+                                <NavLink className="nav-link text-white" to="/comics">Comics</NavLink>
+                                <NavLink className="nav-link text-white" to="/carrito">Carrito</NavLink>
                             </div>
 
                             <div className="d-flex mt-3 justify-content-center">
-                                <NavLink className="mx-2 circuloContacto" to="/mangas"><span className='mostrarRedesSociales'><FontAwesomeIcon icon={faFacebookF} inverse /></span></NavLink>
-                                <NavLink className="mx-2 circuloContacto" to="/mangas"><span className='mostrarRedesSociales'><FontAwesomeIcon icon={faTwitter} inverse /></span></NavLink>
-                                <NavLink className="mx-2 circuloContacto" to="/mangas"><span className='mostrarRedesSociales'><FontAwesomeIcon icon={faInstagram} inverse /></span></NavLink>
+                                <NavLink className="mx-2 circuloContacto" to="/"><span className='mostrarRedesSociales'><FontAwesomeIcon icon={faFacebookF} inverse /></span></NavLink>
+                                <NavLink className="mx-2 circuloContacto" to="/"><span className='mostrarRedesSociales'><FontAwesomeIcon icon={faTwitter} inverse /></span></NavLink>
+                                <NavLink className="mx-2 circuloContacto" to="/"><span className='mostrarRedesSociales'><FontAwesomeIcon icon={faInstagram} inverse /></span></NavLink>
                             </div>
                         
                         </div>

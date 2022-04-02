@@ -37,7 +37,7 @@ export default function ItemList(props){
     {
         productos.length === 0 ?
         <>
-            <div className='w-100 d-flex justify-content-center'>
+            <div className='w-100 d-flex justify-content-center mt-3'>
                 <div className="loading show">
                     <div className="spin"></div>
                 </div>

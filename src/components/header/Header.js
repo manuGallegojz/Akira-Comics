@@ -13,7 +13,7 @@ import banner9 from '../../assets/img/banner/banner9.jpg';
 const ItemListContainer = () => {
 
     return(
-            <div className='mb-5'>
+            <div>
 
                 <Carousel variant="dark" controls={false} fade={true} interval={4000} indicators={false} >
                 <Carousel.Item>
